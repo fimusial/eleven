@@ -5,21 +5,17 @@ import { DictionaryService } from './services/dictionary.service';
 
 @Component({
   selector: 'eleven-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
   public title = 'eleven';
-  public dict: any;
 
   constructor(
     private dataService: DataService,
-    private dictionaryService: DictionaryService,
   ) {
   }
 
   ngOnInit(): void {
     aos.init();
-    this.dict = this.dictionaryService.getDictionary();
   }
 }

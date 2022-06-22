@@ -1,35 +1,4 @@
-<!-- navbar component -->
-<header id="header">
-  <a id="logo" href="" class="container-fluid d-flex justify-content-center">
-    <img src="../assets/logo.png" alt="logo" class="img-fluid">
-  </a>
-  <div class="container-fluid d-flex justify-content-center align-items-center">
-    <nav class="navbar">
-      <ul>
-        <li><a href="">{{ dict.header.about }}</a></li>
-        <li><a href="">{{ dict.header.catalog }}</a></li>
-        <li><a href="">{{ dict.header.contact }}</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-<!-- main page component -->
-<section id="main" class="d-flex align-items-center">
-  <div class="container d-flex flex-column align-items-center" data-aos="zoom-in" data-aos-delay="100">
-    <h1>{{ dict.mainPage.h1 }}</h1>
-    <h2>{{ dict.mainPage.h2 }}</h2>
-    <a href="" class="btn-about">{{ dict.mainPage.button }}</a>
-  </div>
-  <i id="scroll-arrow" class="bi bi-chevron-compact-down"></i>
-</section>
-<section>
-  <div class="section-title">
-    <h2>section-title</h2>
-  </div>
-</section>
-<!-- footer component -->
-<footer>
-  <div class="section-title">
-    <h6>footer</h6>
-  </div>
-</footer>
+<eleven-navbar></eleven-navbar>
+<!-- router outlet -->
+<eleven-main-page></eleven-main-page>
+<eleven-footer></eleven-footer>

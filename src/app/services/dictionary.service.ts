@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DictionaryService {
-  private readonly dictionary: any = {
+  private readonly dictionaryPL: any = {
     header: {
       about: "Zasady",
       catalog: "Katalog",
@@ -20,6 +20,6 @@ export class DictionaryService {
   constructor() { }
 
   public getDictionary(): any {
-    return this.dictionary;
+    return this.dictionaryPL;
   }
 }
