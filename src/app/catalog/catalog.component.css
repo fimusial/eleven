@@ -1,0 +1,22 @@
+.square-img {
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
+.catalog-container {
+  padding: 2rem;
+  border: 5px solid var(--eleven-border-color);
+  border-radius: 10px;
+  transition: .4s;
+}
+
+.catalog-container:hover {
+  transform: scale(1.02);
+  background-color: var(--eleven-border-color);
+}
+
+.catalog-container h6 {
+  font-size: x-large;
+  margin-top: 5px;
+  text-align: center;
+}

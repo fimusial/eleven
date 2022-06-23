@@ -7,6 +7,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { TrsPipe } from './services/trs.pipe';
+import { CatalogComponent } from './catalog/catalog.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { TrsPipe } from './services/trs.pipe';
     NavbarComponent,
     FooterComponent,
     MainPageComponent,
-    TrsPipe
+    TrsPipe,
+    CatalogComponent
   ],
   imports: [
     BrowserModule,

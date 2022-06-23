@@ -12,6 +12,6 @@ export class DataService {
   }
 
   public getData(): any {
-    return this.data;
+    return JSON.parse(JSON.stringify(this.data));
   }
 }
