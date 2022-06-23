@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from './services/data.service';
 import * as aos from 'aos';
-import { DictionaryService } from './services/dictionary.service';
 
 @Component({
   selector: 'eleven-root',
@@ -10,10 +8,7 @@ import { DictionaryService } from './services/dictionary.service';
 export class AppComponent implements OnInit {
   public title = 'eleven';
 
-  constructor(
-    private dataService: DataService,
-  ) {
-  }
+  constructor() { }
 
   ngOnInit(): void {
     aos.init();
