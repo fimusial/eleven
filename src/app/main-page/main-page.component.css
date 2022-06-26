@@ -46,7 +46,7 @@
 #scroll-arrow {
   position: absolute;
   width: 100%;
-  bottom: calc(5%);
+  bottom: -50%;
   font-size: 50px;
   animation: pulse 1.5s infinite;
 }
