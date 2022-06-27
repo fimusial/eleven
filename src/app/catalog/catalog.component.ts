@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Actor } from '../models/actor';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { DataService } from '../services/data.service';
 })
 export class CatalogComponent implements OnInit {
   public readonly dataLocation = '../../assets/data/';
-  public readonly data: any;
+  public readonly data: Actor[];
 
   constructor(public dataService: DataService) {
     this.data = dataService.getData();
@@ -16,5 +17,4 @@ export class CatalogComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

@@ -1,3 +1,20 @@
-{
-  "tomHanks": "actors/tomhanks.jpg"
-}
+[
+  {
+    "name": "Roxie McCallum",
+    "birthYear": 1998,
+    "height": 160,
+    "sex": "female",
+    "hairColor": "dark",
+    "ethnicity": "caucasian",
+    "eyeColor": "brown",
+    "locations": ["masovia"],
+    "languages": ["polish", "english"],
+    "experience": "low",
+    "performances": ["drama"],
+    "skillsDescription": "Lorem ipsum dolor sit amet",
+    "avoids": "Lorem ipsum dolor sit amet",
+    "profilePicturePath": "actors/actor1/stock1.jpg",
+    "otherPicturesPaths": ["actors/actor1/stock2.jpg", "actors/actor1/stock3.jpg"],
+    "youtubeVideosUrls": ["https://www.youtube.com/embed/ScMzIvxBSi4"]
+  }
+]

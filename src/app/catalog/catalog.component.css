@@ -1,22 +1,37 @@
 .square-img {
   aspect-ratio: 1;
   object-fit: contain;
+  min-height: 200px;
 }
 
 .catalog-container {
+  position: relative;
   padding: 2rem;
   border: 5px solid var(--eleven-border-color);
   border-radius: 10px;
   transition: .4s;
 }
 
-.catalog-container:hover {
-  transform: scale(1.02);
-  background-color: var(--eleven-border-color);
-}
-
-.catalog-container h6 {
-  font-size: x-large;
+.catalog-container h5 {
   margin-top: 5px;
   text-align: center;
+}
+
+.catalog-container-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: var(--eleven-border-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.catalog-container:hover .catalog-container-overlay {
+  opacity: 1;
 }

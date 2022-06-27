@@ -1,17 +1,14 @@
 import { Injectable } from '@angular/core';
 import data from '../../assets/data/data.json';
+import { Actor } from '../models/actor';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  private data: any;
+  private data: Actor[] = [];
 
-  constructor() {
-    this.data = data;
-  }
-
-  public getData(): any {
-    return JSON.parse(JSON.stringify(this.data));
+  public getData(): Actor[] {
+    return JSON.parse(JSON.stringify(data)) as Actor[];
   }
 }

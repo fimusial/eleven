@@ -35,8 +35,7 @@
   align-items: center;
   justify-content: space-between;
   font-family: "Raleway", sans-serif;
-  font-size: 15px;
-  font-weight: 600;
+  font-weight: bold;
   color: var(--eleven-text-light-primary);
   white-space: nowrap;
   transition: 0.3s;
