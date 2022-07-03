@@ -8,6 +8,15 @@
   --eleven-border-color: #383838;
 }
 
+/*
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+*/
+
 body {
   font-family: "Open Sans", sans-serif;
   color: var(--eleven-text-light-primary);

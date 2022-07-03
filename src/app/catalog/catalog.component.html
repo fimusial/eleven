@@ -4,16 +4,25 @@
   </div>
   <div class="container">
     <div class="row">
-      <!-- loop the col-lg-4 div -->
-      <div class="col-lg-4 mb-4">
+      <div *ngFor="let actor of data | slice: (currentPage - 1) * pageSize : currentPage * pageSize" class="col-lg-4 mb-4">
         <div class="catalog-container">
-          <img class="w-100 square-img" [src]="dataLocation + data[0].profilePicturePath" alt="Actor" />
-          <h5>{{ data[0].name }}</h5>
+          <img class="w-100 square-img" [src]="dataLocation + actor.profilePicturePath" alt="Actor" />
+          <h5>{{ actor.name }}</h5>
           <div class="catalog-container-overlay">
-            <h4>{{ 'catalog.overlayBirthYear' | trs }}: {{ data[0].birthYear }}</h4>
+            <h4>{{ 'catalog.overlayBirthYear' | trs }}: {{ actor.birthYear }}</h4>
           </div>
         </div>
       </div>
     </div>
+    <ngb-pagination
+      class="d-flex justify-content-center catalog-pagination-controls"
+      [(page)]="currentPage"
+      [pageSize]="pageSize"
+      [collectionSize]="data.length"
+      [maxSize]="paginationBarSize"
+      [rotate]="true"
+      [ellipses]="false"
+      [boundaryLinks]="true">
+    </ngb-pagination>
   </div>
 </section>
