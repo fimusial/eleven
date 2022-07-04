@@ -32,8 +32,10 @@
   text-align: center;
 }
 
-.catalog-container:hover .catalog-container-overlay {
-  opacity: 1;
+@media (min-width: 992px) { /* lg */
+  .catalog-container:hover .catalog-container-overlay {
+    opacity: 1;
+  }
 }
 
 ngb-pagination ::ng-deep .page-link {
