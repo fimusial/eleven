@@ -1,5 +1,23 @@
 [
   {
+    "name": "John Dope",
+    "birthYear": 2002,
+    "height": 184,
+    "sex": "male",
+    "hairColor": "red",
+    "ethnicity": "african",
+    "eyeColor": "gray",
+    "locations": ["holyCross", "greaterPoland"],
+    "languages": ["polish", "spanish", "german"],
+    "experience": "high",
+    "performances": ["drama", "comedy", "horror"],
+    "skillsDescription": "Lorem ipsum dolor sit amet",
+    "avoids": "Lorem ipsum dolor sit amet",
+    "profilePicturePath": "actor3/stock7.jpg",
+    "otherPicturesPaths": ["actor3/stock8.jpg", "actor3/stock9.jpg"],
+    "youtubeVideosUrls": ["https://www.youtube.com/embed/ScMzIvxBSi4"]
+  },
+  {
     "name": "Roxie McCallum",
     "birthYear": 1998,
     "height": 160,
@@ -15,24 +33,6 @@
     "avoids": "Lorem ipsum dolor sit amet",
     "profilePicturePath": "actor1/stock1.jpg",
     "otherPicturesPaths": ["actor1/stock2.jpg", "actor1/stock3.jpg"],
-    "youtubeVideosUrls": ["https://www.youtube.com/embed/ScMzIvxBSi4"]
-  },
-  {
-    "name": "Grace Crawford",
-    "birthYear": 1986,
-    "height": 171,
-    "sex": "female",
-    "hairColor": "light",
-    "ethnicity": "asian",
-    "eyeColor": "green",
-    "locations": ["westPomerania", "pomerania"],
-    "languages": ["polish", "german"],
-    "experience": "medium",
-    "performances": ["comedy", "horror"],
-    "skillsDescription": "Lorem ipsum dolor sit amet",
-    "avoids": "Lorem ipsum dolor sit amet",
-    "profilePicturePath": "actor2/stock4.jpg",
-    "otherPicturesPaths": ["actor2/stock5.jpg", "actor2/stock6.jpg"],
     "youtubeVideosUrls": ["https://www.youtube.com/embed/ScMzIvxBSi4"]
   },
   {
@@ -90,24 +90,6 @@
     "youtubeVideosUrls": ["https://www.youtube.com/embed/ScMzIvxBSi4"]
   },
   {
-    "name": "John Dope",
-    "birthYear": 2002,
-    "height": 184,
-    "sex": "male",
-    "hairColor": "red",
-    "ethnicity": "african",
-    "eyeColor": "gray",
-    "locations": ["holyCross", "greaterPoland"],
-    "languages": ["polish", "spanish", "german"],
-    "experience": "high",
-    "performances": ["drama", "comedy", "horror"],
-    "skillsDescription": "Lorem ipsum dolor sit amet",
-    "avoids": "Lorem ipsum dolor sit amet",
-    "profilePicturePath": "actor3/stock7.jpg",
-    "otherPicturesPaths": ["actor3/stock8.jpg", "actor3/stock9.jpg"],
-    "youtubeVideosUrls": ["https://www.youtube.com/embed/ScMzIvxBSi4"]
-  },
-  {
     "name": "Roxie McCallum",
     "birthYear": 1998,
     "height": 160,
@@ -123,6 +105,24 @@
     "avoids": "Lorem ipsum dolor sit amet",
     "profilePicturePath": "actor1/stock1.jpg",
     "otherPicturesPaths": ["actor1/stock2.jpg", "actor1/stock3.jpg"],
+    "youtubeVideosUrls": ["https://www.youtube.com/embed/ScMzIvxBSi4"]
+  },
+  {
+    "name": "John Dope",
+    "birthYear": 2002,
+    "height": 184,
+    "sex": "male",
+    "hairColor": "red",
+    "ethnicity": "african",
+    "eyeColor": "gray",
+    "locations": ["holyCross", "greaterPoland"],
+    "languages": ["polish", "spanish", "german"],
+    "experience": "high",
+    "performances": ["drama", "comedy", "horror"],
+    "skillsDescription": "Lorem ipsum dolor sit amet",
+    "avoids": "Lorem ipsum dolor sit amet",
+    "profilePicturePath": "actor3/stock7.jpg",
+    "otherPicturesPaths": ["actor3/stock8.jpg", "actor3/stock9.jpg"],
     "youtubeVideosUrls": ["https://www.youtube.com/embed/ScMzIvxBSi4"]
   },
   {
@@ -162,6 +162,24 @@
     "youtubeVideosUrls": ["https://www.youtube.com/embed/ScMzIvxBSi4"]
   },
   {
+    "name": "Grace Crawford",
+    "birthYear": 1986,
+    "height": 171,
+    "sex": "female",
+    "hairColor": "light",
+    "ethnicity": "asian",
+    "eyeColor": "green",
+    "locations": ["westPomerania", "pomerania"],
+    "languages": ["polish", "german"],
+    "experience": "medium",
+    "performances": ["comedy", "horror"],
+    "skillsDescription": "Lorem ipsum dolor sit amet",
+    "avoids": "Lorem ipsum dolor sit amet",
+    "profilePicturePath": "actor2/stock4.jpg",
+    "otherPicturesPaths": ["actor2/stock5.jpg", "actor2/stock6.jpg"],
+    "youtubeVideosUrls": ["https://www.youtube.com/embed/ScMzIvxBSi4"]
+  },
+  {
     "name": "Roxie McCallum",
     "birthYear": 1998,
     "height": 160,
@@ -195,24 +213,6 @@
     "avoids": "Lorem ipsum dolor sit amet",
     "profilePicturePath": "actor2/stock4.jpg",
     "otherPicturesPaths": ["actor2/stock5.jpg", "actor2/stock6.jpg"],
-    "youtubeVideosUrls": ["https://www.youtube.com/embed/ScMzIvxBSi4"]
-  },
-  {
-    "name": "John Dope",
-    "birthYear": 2002,
-    "height": 184,
-    "sex": "male",
-    "hairColor": "red",
-    "ethnicity": "african",
-    "eyeColor": "gray",
-    "locations": ["holyCross", "greaterPoland"],
-    "languages": ["polish", "spanish", "german"],
-    "experience": "high",
-    "performances": ["drama", "comedy", "horror"],
-    "skillsDescription": "Lorem ipsum dolor sit amet",
-    "avoids": "Lorem ipsum dolor sit amet",
-    "profilePicturePath": "actor3/stock7.jpg",
-    "otherPicturesPaths": ["actor3/stock8.jpg", "actor3/stock9.jpg"],
     "youtubeVideosUrls": ["https://www.youtube.com/embed/ScMzIvxBSi4"]
   }
 ]
