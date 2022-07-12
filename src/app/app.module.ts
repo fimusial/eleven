@@ -9,6 +9,11 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { TrsPipe } from './services/trs.pipe';
 import { CatalogComponent } from './catalog/catalog.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProfileComponent } from './profile/profile.component';
+
+import 'hammerjs';
+import 'mousetrap';
+import { GalleryModule } from '@ks89/angular-modal-gallery';
 
 @NgModule({
   declarations: [
@@ -17,12 +22,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FooterComponent,
     MainPageComponent,
     TrsPipe,
-    CatalogComponent
+    CatalogComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    GalleryModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

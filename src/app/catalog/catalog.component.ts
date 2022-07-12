@@ -12,10 +12,10 @@ export class CatalogComponent implements OnInit {
   public readonly data: Actor[];
   
   public currentPage: number = 1;
-  public pageSize: number = 3;
+  public pageSize: number = 12;
   public paginationBarSize = 3;
 
-  constructor(public dataService: DataService) {
+  constructor(dataService: DataService) {
     this.data = dataService.getData();
   }
 

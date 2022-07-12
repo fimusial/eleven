@@ -1,0 +1,14 @@
+ks-plain-gallery ::ng-deep .plain-container {
+  justify-content: center;
+}
+
+ks-plain-gallery ::ng-deep .image {
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+@media (min-width: 992px) { /* lg */
+  ks-plain-gallery ::ng-deep .image {
+    height: 400px !important;
+  }
+}

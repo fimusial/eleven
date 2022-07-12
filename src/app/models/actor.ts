@@ -8,6 +8,7 @@ import { Performance } from "./performance";
 import { EyeColor } from "./eye-color";
 
 export class Actor {
+  public id: string;
   public name: string;
   public birthYear: number;
   public height: number;
@@ -26,7 +27,8 @@ export class Actor {
   public youtubeVideosUrls: string[];
 
   constructor() {
-    this.name = "";
+    this.id = '';
+    this.name = '';
     this.birthYear = 0;
     this.height = 0;
     this.sex = Sex.Female;
@@ -37,9 +39,9 @@ export class Actor {
     this.languages = [];
     this.experience = Experience.Low;
     this.performances = [];
-    this.skillsDescription = "";
-    this.avoids = "";
-    this.profilePicturePath = "";
+    this.skillsDescription = '';
+    this.avoids = '';
+    this.profilePicturePath = '';
     this.otherPicturesPaths = [];
     this.youtubeVideosUrls = [];
   }

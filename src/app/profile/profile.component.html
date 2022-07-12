@@ -1,0 +1,12 @@
+<section>
+  <div class="section-title">
+    <h2> {{ actor.name }} </h2>
+  </div>
+  
+  <ks-plain-gallery
+    [id]="1"
+    [images]="galleryImages"
+    [config]="galleryConfig"
+    (clickImage)="galleryOnShow(1, $event)">
+  </ks-plain-gallery>
+</section>

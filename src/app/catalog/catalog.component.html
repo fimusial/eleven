@@ -5,7 +5,7 @@
   <div class="container">
     <div class="row">
       <div *ngFor="let actor of data | slice: (currentPage - 1) * pageSize : currentPage * pageSize" class="col-lg-4 mb-4">
-        <div class="catalog-container">
+        <div [routerLink]="'/profile'" [queryParams]="{ id: actor.id }" class="catalog-container">
           <img class="w-100 square-img" [src]="dataLocation + actor.profilePicturePath" alt="Actor" />
           <h5>{{ actor.name }}</h5>
           <div class="catalog-container-overlay">
