@@ -32,7 +32,7 @@
   text-align: center;
 }
 
-@media (min-width: 992px) { /* lg */
+@media (min-width: 1200px) { /* xl */
   .catalog-container:hover .catalog-container-overlay {
     opacity: 1;
   }

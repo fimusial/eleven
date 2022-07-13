@@ -1,14 +1,28 @@
-ks-plain-gallery ::ng-deep .plain-container {
-  justify-content: center;
-}
-
-ks-plain-gallery ::ng-deep .image {
+.gallery-image {
   aspect-ratio: 1;
+  height: 380px;
   object-fit: cover;
+  margin: 5px;
+  border: 5px solid var(--eleven-border-color);
+  border-radius: 10px;
 }
 
-@media (min-width: 992px) { /* lg */
-  ks-plain-gallery ::ng-deep .image {
-    height: 400px !important;
+.image-gallery {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1200px) { /* xl */
+  .gallery-image:not(:first-child) {
+    height: 50px;
+  }
+
+  .gallery-image:first-child {
+    flex-basis: 100%;
+    object-fit: contain;
+    border: none;
+    max-width: 100%;
   }
 }

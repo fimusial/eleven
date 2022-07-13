@@ -52,8 +52,8 @@
     "performances": ["drama", "comedy", "horror"],
     "skillsDescription": "Lorem ipsum dolor sit amet",
     "avoids": "Lorem ipsum dolor sit amet",
-    "profilePicturePath": "actor3/stock7.jpg",
-    "otherPicturesPaths": ["actor3/stock8.jpg", "actor3/stock9.jpg"],
+    "profilePicturePath": "actor3/stock8.jpg",
+    "otherPicturesPaths": ["actor3/stock7.jpg", "actor3/stock9.jpg"],
     "youtubeVideosUrls": ["https://www.youtube.com/embed/ScMzIvxBSi4"]
   },
   {
@@ -71,8 +71,8 @@
     "performances": ["drama"],
     "skillsDescription": "Lorem ipsum dolor sit amet",
     "avoids": "Lorem ipsum dolor sit amet",
-    "profilePicturePath": "actor1/stock1.jpg",
-    "otherPicturesPaths": ["actor1/stock2.jpg", "actor1/stock3.jpg"],
+    "profilePicturePath": "actor1/stock2.jpg",
+    "otherPicturesPaths": ["actor1/stock1.jpg", "actor1/stock3.jpg"],
     "youtubeVideosUrls": ["https://www.youtube.com/embed/ScMzIvxBSi4"]
   },
   {
@@ -109,8 +109,8 @@
     "performances": ["drama"],
     "skillsDescription": "Lorem ipsum dolor sit amet",
     "avoids": "Lorem ipsum dolor sit amet",
-    "profilePicturePath": "actor1/stock1.jpg",
-    "otherPicturesPaths": ["actor1/stock2.jpg", "actor1/stock3.jpg"],
+    "profilePicturePath": "actor1/stock3.jpg",
+    "otherPicturesPaths": ["actor1/stock2.jpg", "actor1/stock1.jpg"],
     "youtubeVideosUrls": ["https://www.youtube.com/embed/ScMzIvxBSi4"]
   },
   {
@@ -128,8 +128,8 @@
     "performances": ["drama", "comedy", "horror"],
     "skillsDescription": "Lorem ipsum dolor sit amet",
     "avoids": "Lorem ipsum dolor sit amet",
-    "profilePicturePath": "actor3/stock7.jpg",
-    "otherPicturesPaths": ["actor3/stock8.jpg", "actor3/stock9.jpg"],
+    "profilePicturePath": "actor3/stock9.jpg",
+    "otherPicturesPaths": ["actor3/stock8.jpg", "actor3/stock7.jpg"],
     "youtubeVideosUrls": ["https://www.youtube.com/embed/ScMzIvxBSi4"]
   },
   {
@@ -147,8 +147,8 @@
     "performances": ["comedy", "horror"],
     "skillsDescription": "Lorem ipsum dolor sit amet",
     "avoids": "Lorem ipsum dolor sit amet",
-    "profilePicturePath": "actor2/stock4.jpg",
-    "otherPicturesPaths": ["actor2/stock5.jpg", "actor2/stock6.jpg"],
+    "profilePicturePath": "actor2/stock5.jpg",
+    "otherPicturesPaths": ["actor2/stock6.jpg", "actor2/stock4.jpg"],
     "youtubeVideosUrls": ["https://www.youtube.com/embed/ScMzIvxBSi4"]
   },
   {
@@ -166,8 +166,8 @@
     "performances": ["drama", "comedy", "horror"],
     "skillsDescription": "Lorem ipsum dolor sit amet",
     "avoids": "Lorem ipsum dolor sit amet",
-    "profilePicturePath": "actor3/stock7.jpg",
-    "otherPicturesPaths": ["actor3/stock8.jpg", "actor3/stock9.jpg"],
+    "profilePicturePath": "actor3/stock8.jpg",
+    "otherPicturesPaths": ["actor3/stock7.jpg", "actor3/stock9.jpg"],
     "youtubeVideosUrls": ["https://www.youtube.com/embed/ScMzIvxBSi4"]
   },
   {
@@ -185,8 +185,8 @@
     "performances": ["comedy", "horror"],
     "skillsDescription": "Lorem ipsum dolor sit amet",
     "avoids": "Lorem ipsum dolor sit amet",
-    "profilePicturePath": "actor2/stock4.jpg",
-    "otherPicturesPaths": ["actor2/stock5.jpg", "actor2/stock6.jpg"],
+    "profilePicturePath": "actor2/stock6.jpg",
+    "otherPicturesPaths": ["actor2/stock4.jpg", "actor2/stock5.jpg"],
     "youtubeVideosUrls": ["https://www.youtube.com/embed/ScMzIvxBSi4"]
   },
   {
@@ -204,8 +204,8 @@
     "performances": ["drama"],
     "skillsDescription": "Lorem ipsum dolor sit amet",
     "avoids": "Lorem ipsum dolor sit amet",
-    "profilePicturePath": "actor1/stock1.jpg",
-    "otherPicturesPaths": ["actor1/stock2.jpg", "actor1/stock3.jpg"],
+    "profilePicturePath": "actor1/stock3.jpg",
+    "otherPicturesPaths": ["actor1/stock2.jpg", "actor1/stock1.jpg"],
     "youtubeVideosUrls": ["https://www.youtube.com/embed/ScMzIvxBSi4"]
   },
   {
@@ -223,8 +223,8 @@
     "performances": ["comedy", "horror"],
     "skillsDescription": "Lorem ipsum dolor sit amet",
     "avoids": "Lorem ipsum dolor sit amet",
-    "profilePicturePath": "actor2/stock4.jpg",
-    "otherPicturesPaths": ["actor2/stock5.jpg", "actor2/stock6.jpg"],
+    "profilePicturePath": "actor2/stock6.jpg",
+    "otherPicturesPaths": ["actor2/stock5.jpg", "actor2/stock4.jpg"],
     "youtubeVideosUrls": ["https://www.youtube.com/embed/ScMzIvxBSi4"]
   }
 ]

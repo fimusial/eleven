@@ -48,7 +48,7 @@ section {
   padding: 20px;
 }
 
-.section-title h2 {
+.section-title h1, h2 {
   font-size: 32px;
   font-weight: bold;
   text-transform: uppercase;
@@ -57,7 +57,7 @@ section {
   position: relative;
 }
 
-.section-title h2::after {
+.section-title h1::after, h2::after {
   content: "";
   position: absolute;
   display: block;

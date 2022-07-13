@@ -1,18 +1,8 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Actor } from '../models/actor';
 import { DataService } from '../services/data.service';
-
-import {
-  GridLayout,
-  Image,
-  LineLayout,
-  PlainGalleryConfig,
-  PlainGalleryStrategy,
-  ModalGalleryService,
-  ModalGalleryRef,
-  PlainLibConfig
-} from '@ks89/angular-modal-gallery';
+import { Image, ModalGalleryService, ModalGalleryRef } from '@ks89/angular-modal-gallery';
 
 @Component({
   selector: 'eleven-profile',
@@ -23,17 +13,11 @@ export class ProfileComponent implements OnInit {
 
   private readonly profileIdQueryParamName = 'id';
   public readonly dataLocation = '../../assets/data/';
+  public readonly currentYear = new Date().getFullYear();
   public readonly data: Actor[];
 
   public actor: Actor = new Actor();
-  public galleryImages: Image[] = [];
-
-  public galleryConfig: PlainLibConfig = {
-    plainGalleryConfig: {
-      strategy: PlainGalleryStrategy.GRID,
-      layout: new GridLayout({ width: 'auto', height: '200px' }, { length: 3, wrap: true })
-    }
-  };
+  public galleryImageSources: string[] = [];
 
   constructor(
     dataService: DataService,
@@ -61,19 +45,18 @@ export class ProfileComponent implements OnInit {
 
     this.actor = foundActor as Actor;
     
-    const actorGalleryImageSources = [
+    this.galleryImageSources = [
       this.dataLocation + this.actor.profilePicturePath,
       ...this.actor.otherPicturesPaths.map(path => this.dataLocation + path)
     ];
-
-    this.galleryImages = actorGalleryImageSources.map((x, i) => new Image(i, { img: x }));
   }
 
   public galleryOnShow(id: number, index: number): void {
+    const imagesForModal = this.galleryImageSources.map((x, i) => new Image(i, { img: x }));
     const dialogRef: ModalGalleryRef = this.modalGalleryService.open({
       id,
-      images: this.galleryImages,
-      currentImage: this.galleryImages[index]
+      images: imagesForModal,
+      currentImage: imagesForModal[index]
     }) as ModalGalleryRef;
   }
 

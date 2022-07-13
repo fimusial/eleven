@@ -1,6 +1,6 @@
 <section>
   <div class="section-title">
-    <h2>{{ 'catalog.sectionTitle' | trs }}</h2>
+    <h1>{{ 'catalog.sectionTitle' | trs }}</h1>
   </div>
   <div class="container">
     <div class="row">
@@ -9,7 +9,7 @@
           <img class="w-100 square-img" [src]="dataLocation + actor.profilePicturePath" alt="Actor" />
           <h5>{{ actor.name }}</h5>
           <div class="catalog-container-overlay">
-            <h4>{{ 'catalog.overlayBirthYear' | trs }}: {{ actor.birthYear }}</h4>
+            <p>{{ 'catalog.overlayBirthYear' | trs }}: {{ actor.birthYear }}</p>
           </div>
         </div>
       </div>

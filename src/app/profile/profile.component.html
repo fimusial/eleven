@@ -1,12 +1,19 @@
 <section>
   <div class="section-title">
-    <h2> {{ actor.name }} </h2>
+    <h1> {{ actor.name }} </h1>
   </div>
-  
-  <ks-plain-gallery
-    [id]="1"
-    [images]="galleryImages"
-    [config]="galleryConfig"
-    (clickImage)="galleryOnShow(1, $event)">
-  </ks-plain-gallery>
+  <div class="image-gallery">
+    <ng-container *ngFor="let imageSource of galleryImageSources; let index = index;">
+      <img
+        [class]="'gallery-image'"
+        [src]="imageSource"
+        [attr.data-index]="index"
+        (click)="galleryOnShow(1, index)"/>
+    </ng-container>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <h5>{{'profile.ageLabel' | trs }}: {{ currentYear - actor.birthYear }}</h5>
+  </div>
 </section>
