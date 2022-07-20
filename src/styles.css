@@ -34,7 +34,12 @@ a:hover {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Raleway", sans-serif;
 }
 
@@ -48,7 +53,8 @@ section {
   padding: 20px;
 }
 
-.section-title h1, .section-title h2 {
+.section-title h1,
+.section-title h2 {
   font-size: 32px;
   font-weight: bold;
   text-transform: uppercase;
@@ -57,7 +63,8 @@ section {
   position: relative;
 }
 
-.section-title h1::after, .section-title h2::after {
+.section-title h1::after,
+.section-title h2::after {
   content: "";
   position: absolute;
   display: block;
@@ -73,11 +80,88 @@ section {
 }
 
 /* webhost hacks */
-.disclaimer { display: none; }
 
+.disclaimer {
+  display: none;
+}
 
 /* ks image gallery hacks */
-.cdk-overlay-container,.cdk-global-overlay-wrapper{pointer-events:none;top:0;left:0;height:100%;width:100%}.cdk-overlay-container{position:fixed;z-index:1000}.cdk-overlay-container:empty{display:none}.cdk-global-overlay-wrapper{display:flex;position:absolute;z-index:1000}.cdk-overlay-pane{position:absolute;pointer-events:auto;box-sizing:border-box;z-index:1000;display:flex;max-width:100%;max-height:100%}.cdk-overlay-backdrop{position:absolute;top:0;bottom:0;left:0;right:0;z-index:1000;pointer-events:auto;-webkit-tap-highlight-color:rgba(0,0,0,0);transition:opacity 400ms cubic-bezier(0.25, 0.8, 0.25, 1);opacity:0}.cdk-overlay-backdrop.cdk-overlay-backdrop-showing{opacity:1}.cdk-high-contrast-active .cdk-overlay-backdrop.cdk-overlay-backdrop-showing{opacity:.6}.cdk-overlay-dark-backdrop{background:rgba(0,0,0,.32)}.cdk-overlay-transparent-backdrop{transition:visibility 1ms linear,opacity 1ms linear;visibility:hidden;opacity:1}.cdk-overlay-transparent-backdrop.cdk-overlay-backdrop-showing{opacity:0;visibility:visible}.cdk-overlay-backdrop-noop-animation{transition:none}.cdk-overlay-connected-position-bounding-box{position:absolute;z-index:1000;display:flex;flex-direction:column;min-width:1px;min-height:1px}.cdk-global-scrollblock{position:fixed;width:100%;overflow-y:scroll}
+
+.cdk-overlay-container,
+.cdk-global-overlay-wrapper {
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.cdk-overlay-container {
+  position: fixed;
+  z-index: 1000;
+}
+.cdk-overlay-container:empty {
+  display: none;
+}
+.cdk-global-overlay-wrapper {
+  display: flex;
+  position: absolute;
+  z-index: 1000;
+}
+.cdk-overlay-pane {
+  position: absolute;
+  pointer-events: auto;
+  box-sizing: border-box;
+  z-index: 1000;
+  display: flex;
+  max-width: 100%;
+  max-height: 100%;
+}
+.cdk-overlay-backdrop {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  transition: opacity 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+  opacity: 0;
+}
+.cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
+  opacity: 1;
+}
+.cdk-high-contrast-active .cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
+  opacity: 0.6;
+}
+.cdk-overlay-dark-backdrop {
+  background: rgba(0, 0, 0, 0.32);
+}
+.cdk-overlay-transparent-backdrop {
+  transition: visibility 1ms linear, opacity 1ms linear;
+  visibility: hidden;
+  opacity: 1;
+}
+.cdk-overlay-transparent-backdrop.cdk-overlay-backdrop-showing {
+  opacity: 0;
+  visibility: visible;
+}
+.cdk-overlay-backdrop-noop-animation {
+  transition: none;
+}
+.cdk-overlay-connected-position-bounding-box {
+  position: absolute;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  min-width: 1px;
+  min-height: 1px;
+}
+.cdk-global-scrollblock {
+  position: fixed;
+  width: 100%;
+  overflow-y: scroll;
+}
 
 figcaption.inside {
   display: none;
@@ -90,10 +174,96 @@ figcaption.inside {
 }
 
 .ks-modal-gallery-backdrop {
-  background: #000 !important;
+  background: var(--eleven-background-dark) !important;
   opacity: 0.85 !important;
 }
 
 .ks-modal-gallery-panel {
   z-index: 90000 !important;
+}
+
+/* ngx slider hacks */
+
+.eleven-slider .ngx-slider .ngx-slider-span {
+  color: var(--eleven-text-light-primary);
+}
+
+.eleven-slider .ngx-slider .ngx-slider-bubble.ngx-slider-limit {
+  color: var(--eleven-text-light-secondary);
+}
+
+.eleven-slider .ngx-slider .ngx-slider-bar {
+  background: var(--eleven-text-light-primary);
+  height: 2px;
+}
+
+.eleven-slider .ngx-slider .ngx-slider-selection {
+  background: var(--eleven-pink-primary);
+}
+
+.eleven-slider .ngx-slider .ngx-slider-pointer {
+  width: 24px;
+  height: 16px;
+  top: auto; /* to remove the default positioning */
+  bottom: 0;
+  background-color: var(--eleven-border-color);
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.eleven-slider .ngx-slider .ngx-slider-pointer:after {
+  display: none;
+}
+
+.eleven-slider .ngx-slider .ngx-slider-bubble {
+  bottom: 14px;
+}
+
+.eleven-slider .ngx-slider .ngx-slider-limit {
+  font-weight: bold;
+  color: var(--eleven-pink-primary);
+}
+
+.eleven-slider .ngx-slider .ngx-slider-tick {
+  width: 1px;
+  height: 10px;
+  margin-left: 4px;
+  border-radius: 0;
+  background: var(--eleven-text-light-primary);
+  top: -1px;
+}
+
+.eleven-slider .ngx-slider .ngx-slider-tick.ngx-slider-selected {
+  background: var(--eleven-pink-primary);
+}
+
+/* bootstrap hacks */
+
+.btn, .btn:focus {
+  background-color: transparent;
+  color: var(--eleven-text-light-primary);
+  border-color: var(--eleven-pink-primary);
+  box-shadow: none !important;
+  font-weight: bold;
+}
+
+.btn-check:active + .btn-primary,
+.btn-check:checked + .btn-primary,
+.btn-primary.active,
+.btn-primary:hover,
+.btn-check:active + .btn-outline-primary,
+.btn-check:checked + .btn-outline-primary,
+.btn-outline-primary.active,
+.btn-outline-primary:hover {
+  background-color: var(--eleven-pink-primary);
+  border-color: var(--eleven-pink-primary);
+}
+
+.form-control, .form-select {
+  color: var(--eleven-background);
+  border-color: var(--eleven-text-light-primary);
+}
+
+.form-control:focus, .form-select:focus {
+  box-shadow: 0 0 0 0.2rem var(--eleven-pink-primary);
 }

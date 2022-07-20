@@ -4,16 +4,20 @@ import { DictionaryService } from './dictionary.service';
 @Pipe({
   name: 'trs'
 })
-export class TrsPipe implements PipeTransform {
+export class TranslatePipe implements PipeTransform {
 
   constructor(private dictionaryService: DictionaryService) {
   }
 
   transform(value: string, ...args: any[]): string {
     let dictionary = this.dictionaryService.getDictionary();
-    const keys = value.split('.');
+    let keys = value.split('.');
 
-    if (keys.length != 2) {
+    if (keys.length === 1) {
+      keys = ['enums', keys[0]];
+    }
+
+    if (keys.length !== 2) {
       return value;
     }
 

@@ -1,3 +1,9 @@
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import 'hammerjs';
+import 'mousetrap';
+import { GalleryModule } from '@ks89/angular-modal-gallery';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -6,14 +12,11 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainPageComponent } from './main-page/main-page.component';
-import { TrsPipe } from './services/trs.pipe';
+import { TranslatePipe } from './services/translate.pipe';
 import { CatalogComponent } from './catalog/catalog.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProfileComponent } from './profile/profile.component';
-
-import 'hammerjs';
-import 'mousetrap';
-import { GalleryModule } from '@ks89/angular-modal-gallery';
+import { FilteringFormComponent } from './catalog/filtering-form/filtering-form.component';
+import { EnumToSelectPipe } from './services/enum-to-select.pipe';
 
 @NgModule({
   declarations: [
@@ -21,16 +24,18 @@ import { GalleryModule } from '@ks89/angular-modal-gallery';
     NavbarComponent,
     FooterComponent,
     MainPageComponent,
-    TrsPipe,
+    TranslatePipe,
+    EnumToSelectPipe,
     CatalogComponent,
-    ProfileComponent
+    ProfileComponent,
+    FilteringFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     GalleryModule,
-    
+    NgxSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
