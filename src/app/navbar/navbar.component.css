@@ -6,6 +6,7 @@
 
 #logo {
   width: 170px;
+  transform: scaleX(1.2);
 }
 
 #logo img {

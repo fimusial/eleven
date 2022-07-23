@@ -19,7 +19,7 @@ export class FilteringFormComponent implements OnInit {
 
   public readonly sliderOptions: Options = {
     floor: 18,
-    ceil: 100,
+    ceil: 50,
     showTicks: false,
     step: 1,
     minRange: 1,

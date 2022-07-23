@@ -12,7 +12,10 @@
           <img class="w-100 square-img" [src]="dataLocation + actor.profilePicturePath" alt="Actor" />
           <h5>{{ actor.name }}</h5>
           <div class="catalog-container-overlay">
+            <p>{{ 'catalog.overlayHeight' | trs }}: {{ actor.height }}cm</p>
             <p>{{ 'catalog.overlayBirthYear' | trs }}: {{ actor.birthYear }}</p>
+            <p>{{ 'catalog.overlayEyeColor' | trs }}: {{ actor.eyeColor | trs }}</p>
+            <p><i class="bi bi-chevron-double-right"></i></p>
           </div>
         </div>
       </div>
