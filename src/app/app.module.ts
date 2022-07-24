@@ -6,6 +6,7 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,7 @@ import { CatalogComponent } from './catalog/catalog.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FilteringFormComponent } from './catalog/filtering-form/filtering-form.component';
 import { EnumToSelectPipe } from './services/enum-to-select.pipe';
+import { ElevenFilterPipe } from './services/eleven-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -28,16 +30,18 @@ import { EnumToSelectPipe } from './services/enum-to-select.pipe';
     EnumToSelectPipe,
     CatalogComponent,
     ProfileComponent,
-    FilteringFormComponent
+    FilteringFormComponent,
+    ElevenFilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     NgbModule,
     GalleryModule,
     NgxSliderModule
   ],
-  providers: [],
+  providers: [ElevenFilterPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

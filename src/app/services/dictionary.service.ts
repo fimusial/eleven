@@ -12,20 +12,63 @@ export class DictionaryService {
       other: 'Inne',
       female: 'Kobieta',
       male: 'Mężczyzna',
+      caucasian: 'Kaukaskie',
+      asian: 'Azjatyckie',
+      african: 'Afrykańskie',
+      greaterPoland: 'Wielkopolskie',
+      kuyaviaPomerania: 'Kujawsko-Pomorskie',
+      lesserPoland: 'Małopolskie',
+      lodz: 'Łódzkie',
+      lowerSilesia: 'Dolnośląskie',
+      lublin: 'Lubelskie',
+      lubusz: 'Lubuskie',
+      masovia: 'Mazowieckie',
+      opole: 'Opolskie',
+      podlaskie: 'Podlaskie',
+      pomerania: 'Pomorskie',
+      silesia: 'Śląskie',
+      subcarpathia: 'Podkarpackie',
+      holyCross: 'Świętokrzyskie',
+      warmiaMasuria: 'Warmińsko-Mazurskie',
+      westPomerania: 'Zachodniopomorskie',
+      brown: 'Brązowe',
+      green: 'Zielone',
+      blue: 'Niebieskie',
+      gray: 'Szare',
+    },
+    catalog: {
+      sectionTitle: 'Katalog',
+      overlayHeight: 'Wzrost',
+      overlayAge: 'Wiek',
+      overlaySex: 'Płeć',
+      overlayHairColor: 'Kolor włosów',
+      overlayEyeColor: 'Kolor oczu',
+      overlayEthnicity: 'Pochodzenie etniczne',
+      noData: 'Brak wyników',
     },
     filteringForm: {
-      collapsedMessage: 'Szukaj'
+      collapsedMessage: 'Szukaj',
+      sexLabel: 'Płeć',
+      ageLabel: 'Wiek',
+      hairColorLabel: 'Kolor włosów',
+      ethnicityLabel: 'Pochodzenie etniczne',
+      locationLabel: 'Lokalizacja',
+      resetButton: 'Wyczyść filtry',
+      submitButton: 'Szukaj',
     },
     header: {
       about: 'Zasady',
       catalog: 'Katalog',
-      contact: 'Kontakt'
+      contact: 'Kontakt',
     },
     mainPage: {
       h1: 'Agencja Eleven',
       h2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-      button: 'SZUKAJ'
+      button: 'SZUKAJ',
     },
+    footer: {
+      content: '2022 - made by reyss - #71',
+    }
   }
 
   constructor() { }

@@ -26,7 +26,7 @@ export class Actor {
   public otherPicturesPaths: string[];
   public youtubeVideosUrls: string[];
 
-  constructor() {
+  constructor(obj?: any) {
     this.id = '';
     this.name = '';
     this.birthYear = 0;
@@ -44,5 +44,17 @@ export class Actor {
     this.profilePicturePath = '';
     this.otherPicturesPaths = [];
     this.youtubeVideosUrls = [];
+
+    if (obj) {
+      for (let key in this) {
+        if (obj[key]) {
+          this[key] = obj[key];
+        }
+      }
+    }
+  }
+
+  public get age(): number {
+    return new Date().getFullYear() - this.birthYear;
   }
 }

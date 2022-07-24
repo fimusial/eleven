@@ -1,3 +1,20 @@
+#no-data {
+  margin: 5%;
+  text-align: center;
+}
+
+a.catalog-container:link {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: auto;
+}
+
+a.catalog-container:visited {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: auto;
+}
+
 .square-img {
   aspect-ratio: 1;
   object-fit: contain;
@@ -9,7 +26,8 @@
   padding: 2rem;
   border: 5px solid var(--eleven-border-color);
   border-radius: 10px;
-  transition: 0.4s;
+  transition: 0.5s;
+  display: block;
 }
 
 .catalog-container h5 {
@@ -30,6 +48,14 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
+}
+
+.catalog-container-overlay p {
+  margin-bottom: 0;
+}
+
+.bi-chevron-double-right {
+  font-size: 2em !important;
 }
 
 @media (min-width: 1200px) {

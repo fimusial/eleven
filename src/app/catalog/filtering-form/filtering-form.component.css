@@ -15,12 +15,22 @@
   transform: scale(1.5);
 }
 
+#slider-wrapper {
+  padding-left: 30px;
+}
+
 .collapse-arrow {
   font-size: 20px;
 }
 
-#slider-wrapper {
-  padding-left: 30px;
+.form-check-input {
+  margin-right: 5px;
+}
+
+.disabledControl {
+  filter: grayscale(1);
+  opacity: 0.25;
+  pointer-events: none;
 }
 
 @media (min-width: 1200px) {
@@ -32,7 +42,8 @@
 
 @media (max-width: 576px) {
   /* sm */
-  .bi-gender-female, .bi-gender-male {
+  .bi-gender-female,
+  .bi-gender-male {
     display: none;
   }
 }

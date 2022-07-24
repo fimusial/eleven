@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 import { Actor } from '../models/actor';
 import { DataService } from '../services/data.service';
 import { Image, ModalGalleryService, ModalGalleryRef } from '@ks89/angular-modal-gallery';
@@ -22,6 +23,7 @@ export class ProfileComponent implements OnInit {
   constructor(
     dataService: DataService,
     private router: Router,
+    private titleService: Title,
     private activatedRoute: ActivatedRoute,
     private modalGalleryService: ModalGalleryService) {
       this.data = dataService.getData();
@@ -45,13 +47,15 @@ export class ProfileComponent implements OnInit {
 
     this.actor = foundActor as Actor;
     
+    this.titleService.setTitle('Eleven - ' + this.actor.name);
+
     this.galleryImageSources = [
       this.dataLocation + this.actor.profilePicturePath,
       ...this.actor.otherPicturesPaths.map(path => this.dataLocation + path)
     ];
   }
 
-  public galleryOnShow(id: number, index: number): void {
+  public onShowGallery(id: number, index: number): void {
     const imagesForModal = this.galleryImageSources.map((x, i) => new Image(i, { img: x }));
     const dialogRef: ModalGalleryRef = this.modalGalleryService.open({
       id,

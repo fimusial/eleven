@@ -14,6 +14,33 @@
   height: auto;
 }
 
+#scroll-to-top-button {
+  position: fixed;
+  z-index: 99;
+  bottom: 20px;
+  right: 20px;
+  width: 5vw;
+  aspect-ratio: 3;
+  text-align: center;
+  min-width: 50px;
+  max-width: 70px;
+  border-radius: 10px;
+  transition: 0.25s;
+  border: 2px solid var(--eleven-pink-primary);
+  color: var(--eleven-pink-primary);
+  background-color: transparent;
+  box-shadow: 0px 0px 4px 4px #ff4fb032;
+}
+
+#scroll-to-top-button i {
+  width: 100%;
+  font-size: 2em;
+}
+
+#scroll-to-top-button:hover {
+  transform: scale(1.2);
+}
+
 .navbar {
   padding: 0;
 }
@@ -39,7 +66,7 @@
   font-weight: bold;
   color: var(--eleven-text-light-primary);
   white-space: nowrap;
-  transition: 0.3s;
+  transition: 0.25s;
   position: relative;
 }
 
@@ -52,7 +79,7 @@
   background-color: var(--eleven-pink-primary);
   visibility: visible;
   width: 0px;
-  transition: all 0.2s ease-in-out 0s;
+  transition: all 0.25s ease-in-out 0s;
 }
 
 .navbar a:hover:before {

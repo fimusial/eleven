@@ -6,17 +6,30 @@
     <i *ngIf="collapsed" class="collapse-arrow bi bi-chevron-compact-down"></i>
     <i *ngIf="!collapsed" class="mb-4 collapse-arrow bi bi-chevron-compact-up"></i>
   </div>
-  <form *ngIf="!collapsed">
+  <form *ngIf="!collapsed" [formGroup]="form" (ngSubmit)="onFormSubmitted()">
+    <div class="form-group row">
+      <div class="col-lg-4"></div>
+      <div class="col-lg-8 mb-2">
+        <button class="w-100 btn btn-primary" type="button"
+          (click)="onFormReset()"
+          [ngClass]="{ 'disabledControl': form.pristine }">
+          {{ 'filteringForm.resetButton' | trs }}
+        </button>
+      </div>
+    </div>
     <div class="form-group row">
       <!-- sex -->
-      <label class="col-lg-4 col-form-label">{{ 'filteringForm.sexLabel' | trs }}</label>
-      <div class="col-lg-8 btn-group mb-2" role="group">
-        <input type="radio" class="btn-check" name="sex-selector" id="female-option" autocomplete="off" checked>
+      <label class="col-lg-4 col-form-label">
+        <input class="form-check-input" type="checkbox" formControlName="sexEnabled">
+        {{ 'filteringForm.sexLabel' | trs }}
+      </label>
+      <div class="col-lg-8 btn-group mb-2" [ngClass]="{ 'disabledControl': !form.value.sexEnabled }" role="group">
+        <input id="female-option" [value]="sexEnum.Female" class="btn-check" type="radio" formControlName="sex">
         <label class="w-50 btn btn-outline-primary" for="female-option">
           {{ sexEnum.Female | trs }}
           <i class="bi bi-gender-female"></i>
         </label>
-        <input type="radio" class="btn-check" name="sex-selector" id="male-option" autocomplete="off">
+        <input id="male-option" [value]="sexEnum.Male" class="btn-check" type="radio" formControlName="sex">
         <label class="w-50 btn btn-outline-primary" for="male-option">
           {{ sexEnum.Male | trs }}
           <i class="bi bi-gender-male"></i>
@@ -24,41 +37,66 @@
       </div>
       <!-- age -->
       <div class="row">
-        <label class="col-lg-4 col-form-label">{{ 'filteringForm.ageLabel' | trs }}</label>
-        <div id="slider-wrapper" class="col-lg-8">
+        <label class="col-lg-4 col-form-label">
+          <input class="form-check-input" type="checkbox" formControlName="ageEnabled">
+          {{ 'filteringForm.ageLabel' | trs }}
+        </label>
+        <div id="slider-wrapper" class="col-lg-8" [ngClass]="{ 'disabledControl': !form.value.ageEnabled }">
           <div class="eleven-slider">
-            <ngx-slider [(value)]="sliderMinValue" [(highValue)]="sliderMaxValue" [options]="sliderOptions"></ngx-slider>
+            <ngx-slider
+              [(value)]="ageSliderMinValue"
+              [(highValue)]="ageSliderMaxValue"
+              [options]="sliderOptions">
+            </ngx-slider>
           </div>
         </div>
       </div>
     </div>
     <div class="form-group row">
       <!-- hair color -->
-      <label class="col-lg-4 col-form-label" for="hair-color-control">{{ 'filteringForm.hairColorLabel' | trs }}</label>
-      <div class="col-lg-8 mb-2">
-        <select id="hair-color-control" class="form-select">
-          <option *ngFor="let value of hairColorEnum | e2s">{{ value | trs }}</option>
+      <label class="col-lg-4 col-form-label">
+        <input class="form-check-input" type="checkbox" formControlName="hairColorEnabled">
+        {{ 'filteringForm.hairColorLabel' | trs }}
+      </label>
+      <div class="col-lg-8 mb-2" [ngClass]="{ 'disabledControl': !form.value.hairColorEnabled }">
+        <select id="hair-color-control" class="form-select" formControlName="hairColor">
+          <option *ngFor="let value of hairColorEnum | e2s" [value]="value">{{ value | trs }}</option>
         </select>
       </div>
       <!-- ethnicity -->
-      <label class="col-lg-4 col-form-label" for="ethnicity-control">{{ 'filteringForm.ethnicityLabel' | trs }}</label>
-      <div class="col-lg-8 mb-2">
-        <select id="ethnicity-control" class="form-select">
-          <option *ngFor="let value of ethnicityEnum | e2s">{{ value | trs }}</option>
+      <label class="col-lg-4 col-form-label">
+        <input class="form-check-input" type="checkbox" formControlName="ethnicityEnabled">
+        {{ 'filteringForm.ethnicityLabel' | trs }}
+      </label>
+      <div class="col-lg-8 mb-2" [ngClass]="{ 'disabledControl': !form.value.ethnicityEnabled }">
+        <select id="ethnicity-control" class="form-select" formControlName="ethnicity">
+          <option *ngFor="let value of ethnicityEnum | e2s" [value]="value">{{ value | trs }}</option>
         </select>
       </div>
       <!-- location -->
-      <label class="col-lg-4 col-form-label" for="location-control">{{ 'filteringForm.locationLabel' | trs }}</label>
-      <div class="col-lg-8 mb-2">
-        <select id="location-control" class="form-select">
-          <option *ngFor="let value of locationEnum | e2s">{{ value | trs }}</option>
+      <label class="col-lg-4 col-form-label">
+        <input class="form-check-input" type="checkbox" formControlName="locationEnabled">
+        {{ 'filteringForm.locationLabel' | trs }}
+      </label>
+      <div class="col-lg-8 mb-2" [ngClass]="{ 'disabledControl': !form.value.locationEnabled }">
+        <select id="location-control" class="form-select" formControlName="location">
+          <option *ngFor="let value of locationEnum | e2s" [value]="value">{{ value | trs }}</option>
         </select>
       </div>
     </div>
     <div class="form-group row">
       <div class="col-lg-4"></div>
       <div class="col-lg-8 mb-2">
-        <button class="w-100 btn btn-primary">{{ 'filteringForm.submitButton' | trs }}</button>
+        <button class="w-100 btn btn-primary" type="submit"
+          [ngClass]="{
+          'disabledControl': !form.value.sexEnabled
+            && !form.value.ageEnabled
+            && !form.value.hairColorEnabled
+            && !form.value.ethnicityEnabled
+            && !form.value.locationEnabled
+          }">
+        {{ 'filteringForm.submitButton' | trs }}
+        </button>
       </div>
     </div>
   </form>

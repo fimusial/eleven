@@ -1,6 +1,7 @@
 :root {
-  --eleven-pink-primary: #ff76b8;
-  --eleven-pink-secondary: #ab517c;
+  /* --eleven-pink-primary: #ff76b8; */
+  --eleven-pink-primary: #ff4fb0;
+  /* --eleven-pink-secondary: #ab517c; */
   --eleven-text-light-primary: #f3f3f3;
   --eleven-text-light-secondary: #a2a2a2;
   --eleven-background: #252525;
@@ -240,7 +241,8 @@ figcaption.inside {
 
 /* bootstrap hacks */
 
-.btn, .btn:focus {
+.btn,
+.btn:focus {
   background-color: transparent;
   color: var(--eleven-text-light-primary);
   border-color: var(--eleven-pink-primary);
@@ -260,12 +262,27 @@ figcaption.inside {
   border-color: var(--eleven-pink-primary);
 }
 
-.form-control, .form-select {
+.form-control,
+.form-select {
   color: var(--eleven-background);
   border-color: var(--eleven-text-light-primary);
   border: none;
 }
 
-.form-control:focus, .form-select:focus {
+.form-control:focus,
+.form-select:focus {
   box-shadow: 0 0 0 0.2rem var(--eleven-pink-primary);
+}
+
+.form-check-input {
+  border-color: var(--eleven-text-light-primary);
+  border: none;
+}
+
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.2rem var(--eleven-pink-primary);
+}
+
+.form-check-input:checked {
+  background-color: var(--eleven-pink-primary);
 }

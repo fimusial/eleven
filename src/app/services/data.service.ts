@@ -9,6 +9,12 @@ export class DataService {
   private data: Actor[] = [];
 
   public getData(): Actor[] {
-    return JSON.parse(JSON.stringify(data)) as Actor[];
+    const result: Actor[] = [];
+    
+    (data as any[]).forEach(element => {
+      result.push(new Actor(element));
+    });
+
+    return result;
   }
 }

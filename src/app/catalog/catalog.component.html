@@ -3,32 +3,42 @@
     <h1>{{ 'catalog.sectionTitle' | trs }}</h1>
   </div>
   <div class="container mb-4">
-    <eleven-filtering-form></eleven-filtering-form>
+    <eleven-filtering-form (parameters)="onFilteringParametersChanged($event)"></eleven-filtering-form>
   </div>
   <div class="container">
     <div class="row">
-      <div *ngFor="let actor of data | slice: (currentPage - 1) * pageSize : currentPage * pageSize" class="col-lg-4 mb-4">
-        <div [routerLink]="'/profile'" [queryParams]="{ id: actor.id }" class="catalog-container">
+      <div class="col-lg-4 mb-4"
+        *ngFor="let actor of filteredData
+          | slice: (currentPage - 1) * pageSize : currentPage * pageSize">
+        <a class="catalog-container" [routerLink]="'/profile'" [queryParams]="{ id: actor.id }">
           <img class="w-100 square-img" [src]="dataLocation + actor.profilePicturePath" alt="Actor" />
           <h5>{{ actor.name }}</h5>
           <div class="catalog-container-overlay">
+            <p>{{ 'catalog.overlaySex' | trs }}: {{ actor.sex | trs }}</p>
             <p>{{ 'catalog.overlayHeight' | trs }}: {{ actor.height }}cm</p>
-            <p>{{ 'catalog.overlayBirthYear' | trs }}: {{ actor.birthYear }}</p>
+            <p>{{ 'catalog.overlayAge' | trs }}: {{ actor.age }}</p>
+            <p>{{ 'catalog.overlayHairColor' | trs }}: {{ actor.hairColor | trs }}</p>
             <p>{{ 'catalog.overlayEyeColor' | trs }}: {{ actor.eyeColor | trs }}</p>
+            <p>{{ 'catalog.overlayEthnicity' | trs }}: {{ actor.ethnicity | trs }}</p>
             <p><i class="bi bi-chevron-double-right"></i></p>
           </div>
-        </div>
+        </a>
       </div>
     </div>
-    <ngb-pagination
-      class="d-flex justify-content-center catalog-pagination-controls"
-      [(page)]="currentPage"
-      [pageSize]="pageSize"
-      [collectionSize]="data.length"
-      [maxSize]="paginationBarSize"
-      [rotate]="true"
-      [ellipses]="false"
-      [boundaryLinks]="true">
-    </ngb-pagination>
+    <ng-container *ngIf="filteredData.length == 0; else paginationControls">
+      <h2 id="no-data">{{ 'catalog.noData' | trs }}</h2>
+    </ng-container>
+    <ng-template #paginationControls>
+      <ngb-pagination
+        class="d-flex justify-content-center catalog-pagination-controls"
+        [(page)]="currentPage"
+        [pageSize]="pageSize"
+        [collectionSize]="filteredData.length"
+        [maxSize]="paginationBarSize"
+        [rotate]="true"
+        [ellipses]="false"
+        [boundaryLinks]="true">
+      </ngb-pagination>
+    </ng-template>
   </div>
 </section>
