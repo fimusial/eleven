@@ -46,7 +46,23 @@
             <ngx-slider
               [(value)]="ageSliderMinValue"
               [(highValue)]="ageSliderMaxValue"
-              [options]="sliderOptions">
+              [options]="ageSliderOptions">
+            </ngx-slider>
+          </div>
+        </div>
+      </div>
+      <!-- height -->
+      <div class="row">
+        <label class="col-lg-4 col-form-label">
+          <input class="form-check-input" type="checkbox" formControlName="heightEnabled">
+          {{ 'filteringForm.heightLabel' | trs }}
+        </label>
+        <div id="slider-wrapper" class="col-lg-8" [ngClass]="{ 'disabledControl': !form.value.heightEnabled }">
+          <div class="eleven-slider">
+            <ngx-slider
+              [(value)]="heightSliderMinValue"
+              [(highValue)]="heightSliderMaxValue"
+              [options]="heightSliderOptions">
             </ngx-slider>
           </div>
         </div>
@@ -61,6 +77,16 @@
       <div class="col-lg-8 mb-2" [ngClass]="{ 'disabledControl': !form.value.hairColorEnabled }">
         <select id="hair-color-control" class="form-select" formControlName="hairColor">
           <option *ngFor="let value of hairColorEnum | e2s" [value]="value">{{ value | trs }}</option>
+        </select>
+      </div>
+      <!-- eye color -->
+      <label class="col-lg-4 col-form-label">
+        <input class="form-check-input" type="checkbox" formControlName="eyeColorEnabled">
+        {{ 'filteringForm.eyeColorLabel' | trs }}
+      </label>
+      <div class="col-lg-8 mb-2" [ngClass]="{ 'disabledControl': !form.value.eyeColorEnabled }">
+        <select id="eye-color-control" class="form-select" formControlName="eyeColor">
+          <option *ngFor="let value of eyeColorEnum | e2s" [value]="value">{{ value | trs }}</option>
         </select>
       </div>
       <!-- ethnicity -->
@@ -91,7 +117,9 @@
           [ngClass]="{
           'disabledControl': !form.value.sexEnabled
             && !form.value.ageEnabled
+            && !form.value.heightEnabled
             && !form.value.hairColorEnabled
+            && !form.value.eyeColorEnabled
             && !form.value.ethnicityEnabled
             && !form.value.locationEnabled
           }">

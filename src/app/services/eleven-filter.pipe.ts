@@ -11,7 +11,9 @@ export class ElevenFilterPipe implements PipeTransform {
     return data.filter(actor => {
       return (!params.sexEnabled || (params.sex == actor.sex))
         && (!params.ageEnabled || (params.minAge <= actor.age && actor.age <= params.maxAge))
+        && (!params.heightEnabled || (params.minHeight <= actor.height && actor.height <= params.maxHeight))
         && (!params.hairColorEnabled || (params.hairColor == actor.hairColor))
+        && (!params.eyeColorEnabled || (params.eyeColor == actor.eyeColor))
         && (!params.ethnicityEnabled || (params.ethnicity == actor.ethnicity))
         && (!params.locationEnabled || actor.locations.includes(params.location));
     });
