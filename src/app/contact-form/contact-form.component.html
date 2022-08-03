@@ -1,0 +1,76 @@
+<section>
+  <div class="section-title">
+    <h1>{{ 'contactForm.sectionTitle' | trs }}</h1>
+  </div>
+  <div class="container">
+    <form id="contact-from" [formGroup]="form" (ngSubmit)="onFormSubmitted()">
+      <h2 class="text-center">TODO: validate me and test on other browsers!</h2>
+      <div class="form-group row">
+        <!-- subject -->
+        <label class="col-lg-4 col-form-label">{{ 'contactForm.senderNameLabel' | trs }}</label>
+        <div class="col-lg-8 mb-2">
+          <input
+            class="form-control"
+            type="text"
+            onkeydown="return /[a-z]/i.test(event.key)"
+            maxlength="50"
+            formControlName="senderName">
+        </div>
+        <!-- reply to -->
+        <label class="col-lg-4 col-form-label">{{ 'contactForm.replyToLabel' | trs }}</label>
+        <div class="col-lg-8 mb-2">
+          <input
+            class="form-control"
+            type="email"
+            formControlName="replyTo">
+        </div>
+        <!-- subject -->
+        <label class="col-lg-4 col-form-label">{{ 'contactForm.subjectLabel' | trs }}</label>
+        <div class="col-lg-8 mb-2">
+          <input
+            class="form-control"
+            type="text"
+            onkeydown="return /[a-z]/i.test(event.key)"
+            maxlength="50"
+            formControlName="subject">
+        </div>
+        <!-- message -->
+        <label class="col-lg-4 col-form-label">{{ 'contactForm.messageLabel' | trs }}</label>
+        <div class="col-lg-8 mb-2">
+          <textarea
+            class="form-control"
+            rows="4"
+            style="resize: none"
+            maxlength="255"
+            formControlName="message">
+          </textarea>
+        </div>
+        <!-- attachment -->
+        <label class="col-lg-4 col-form-label">{{ 'contactForm.attachmentLabel' | trs }}</label>
+        <div class="col-lg-8 mb-2">
+          <input
+            class="form-control"
+            type="file"
+            accept="application/pdf"
+            name="attachment"
+            (change)="onAttachmentChanged($event)">
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-8 mb-2">
+          <button class="w-100 btn btn-primary" type="submit"
+            [ngClass]="{
+            'disabledControl': false
+            }">
+          {{ 'contactForm.submitButton' | trs }}
+          </button>
+        </div>
+      </div>
+      <div *ngIf="done" id="form-overlay">
+        <h2>{{ 'contactForm.thankYouMessage' | trs }}</h2>
+        <a [routerLink]="'/catalog'" class="w-25 btn-about">{{ 'contactForm.back' | trs }}</a>
+      </div>
+    </form>
+  </div>
+</section>

@@ -27,12 +27,6 @@
   margin-right: 5px;
 }
 
-.disabledControl {
-  filter: grayscale(1);
-  opacity: 0.25;
-  pointer-events: none;
-}
-
 @media (min-width: 1200px) {
   /* xl */
   .collapse-arrow {

@@ -1,0 +1,56 @@
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { environment } from 'src/environments/environment';
+
+@Component({
+  selector: 'eleven-contact-form',
+  templateUrl: './contact-form.component.html',
+  styleUrls: ['./contact-form.component.css']
+})
+export class ContactFormComponent implements OnInit {
+
+  public done: boolean = false;
+  public attachment: File | null = null;
+
+  public form = new FormGroup({
+    senderName: new FormControl<string>(''),
+    replyTo: new FormControl<string>(''),
+    subject: new FormControl<string>(''),
+    message: new FormControl<string>(''),
+  });
+
+  constructor(private http: HttpClient) {
+  }
+
+  ngOnInit(): void {
+    this.form.patchValue({
+      subject: 'Actor name from profile',
+    });
+  }
+
+  public onFormSubmitted(): void {
+    // validate first
+    const formData = new FormData();
+    formData.append('sender-name', this.form.value.senderName as string);
+    formData.append('reply-to', this.form.value.replyTo as string);
+    formData.append('subject', this.form.value.subject as string);
+    formData.append('message', this.form.value.message as string);
+    formData.append('attachment', this.attachment as File, this.attachment?.name);
+    
+    this.http.post(environment.mailerUrl, formData)
+      .subscribe(() => {
+        this.done = true;
+      });
+  }
+
+  public onAttachmentChanged(event: Event): void {
+    const htmlInput = event.target as HTMLInputElement;
+    
+    if (!(htmlInput && htmlInput.files && htmlInput.files.length > 0)) {
+      return;
+    }
+
+    this.attachment = htmlInput.files[0];
+  }
+}

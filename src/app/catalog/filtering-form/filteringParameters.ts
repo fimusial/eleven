@@ -1,8 +1,8 @@
-import { Ethnicity } from "src/app/models/ethnicity";
-import { HairColor } from "src/app/models/hair-color";
-import { Sex } from "src/app/models/sex";
-import { Location } from "src/app/models/location";
-import { EyeColor } from "src/app/models/eye-color";
+import { Ethnicity } from 'src/app/models/ethnicity';
+import { HairColor } from 'src/app/models/hair-color';
+import { Sex } from 'src/app/models/sex';
+import { Location } from 'src/app/models/location';
+import { EyeColor } from 'src/app/models/eye-color';
 
 export class FilteringParameters {
   public sexEnabled: boolean = false;

@@ -58,6 +58,17 @@ export class DictionaryService {
       resetButton: 'Wyczyść filtry',
       submitButton: 'Szukaj',
     },
+    contactForm: {
+      sectionTitle: 'Kontakt',
+      senderNameLabel: 'Twoje imię',
+      replyToLabel: 'Adres email',
+      subjectLabel: 'Temat',
+      messageLabel: 'Wiadomość',
+      attachmentLabel: 'Załącznik (tylko PDF)',
+      submitButton: 'Wyślij',
+      thankYouMessage: 'Dziękujemy za Twoją wiadomość',
+      back: 'powrót',
+    },
     header: {
       about: 'Zasady',
       catalog: 'Katalog',

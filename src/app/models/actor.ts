@@ -1,11 +1,11 @@
-import { Ethnicity } from "./ethnicity";
-import { HairColor } from "./hair-color";
-import { Sex } from "./sex";
-import { Location } from "./location";
-import { Experience } from "./experience";
-import { Language } from "./language";
-import { Performance } from "./performance";
-import { EyeColor } from "./eye-color";
+import { Ethnicity } from './ethnicity';
+import { HairColor } from './hair-color';
+import { Sex } from './sex';
+import { Location } from './location';
+import { Experience } from './experience';
+import { Language } from './language';
+import { Performance } from './performance';
+import { EyeColor } from './eye-color';
 
 export class Actor {
   public id: string;
