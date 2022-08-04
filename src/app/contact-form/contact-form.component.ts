@@ -39,7 +39,10 @@ export class ContactFormComponent implements OnInit {
     formData.append('reply-to', this.form.value.replyTo as string);
     formData.append('subject', this.form.value.subject as string);
     formData.append('message', this.form.value.message as string);
-    formData.append('attachment', this.attachment as File, this.attachment?.name);
+    
+    if (this.attachment) {
+      formData.append('attachment', this.attachment as File, this.attachment.name);
+    }
 
     this.http.post(environment.mailerUrl, formData).subscribe(() => {});
     this.done = true;
