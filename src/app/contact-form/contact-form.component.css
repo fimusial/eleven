@@ -17,3 +17,27 @@
   align-items: center;
   text-align: center;
 }
+
+#textarea-container {
+  position: relative;
+}
+
+#message-length-counter {
+  bottom: 5px;
+  right: 5px;
+  padding: 0 5px;
+  position: absolute;
+  color: var(--eleven-border-color);
+  background-color: white;
+  border: 1px solid var(--eleven-border-color);
+  border-radius: 5px;
+}
+
+.validation-message {
+  color: rgb(253, 56, 56);
+}
+
+.required-label::after {
+  content: "*";
+  color: rgb(253, 56, 56);
+}

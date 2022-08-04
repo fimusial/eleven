@@ -4,46 +4,64 @@
   </div>
   <div class="container">
     <form id="contact-from" [formGroup]="form" (ngSubmit)="onFormSubmitted()">
-      <h2 class="text-center">TODO: validate me and test on other browsers!</h2>
       <div class="form-group row">
-        <!-- subject -->
-        <label class="col-lg-4 col-form-label">{{ 'contactForm.senderNameLabel' | trs }}</label>
+        <!-- sender name -->
+        <label class="col-lg-4 col-form-label required-label">{{ 'contactForm.senderNameLabel' | trs }}</label>
         <div class="col-lg-8 mb-2">
           <input
             class="form-control"
             type="text"
-            onkeydown="return /[a-z]/i.test(event.key)"
             maxlength="50"
-            formControlName="senderName">
+            formControlName="senderName" />
+            <div *ngIf="form.controls.senderName.hasError('required') && form.controls.senderName.touched" class="validation-message">
+              {{ 'contactForm.emptyValidationMessage' | trs }}
+            </div>
         </div>
         <!-- reply to -->
-        <label class="col-lg-4 col-form-label">{{ 'contactForm.replyToLabel' | trs }}</label>
+        <label class="col-lg-4 col-form-label required-label">{{ 'contactForm.replyToLabel' | trs }}</label>
         <div class="col-lg-8 mb-2">
           <input
             class="form-control"
             type="email"
-            formControlName="replyTo">
+            formControlName="replyTo" />
+          <ng-container *ngIf="form.controls.replyTo.touched">
+            <div *ngIf="form.controls.replyTo.hasError('required')" class="validation-message">
+              {{ 'contactForm.emptyValidationMessage' | trs }}
+            </div>
+            <div *ngIf="form.controls.replyTo.hasError('email')" class="validation-message">
+              {{ 'contactForm.emailValidationMessage' | trs }}
+            </div>
+          </ng-container>
         </div>
         <!-- subject -->
-        <label class="col-lg-4 col-form-label">{{ 'contactForm.subjectLabel' | trs }}</label>
+        <label class="col-lg-4 col-form-label required-label">{{ 'contactForm.subjectLabel' | trs }}</label>
         <div class="col-lg-8 mb-2">
           <input
             class="form-control"
             type="text"
-            onkeydown="return /[a-z]/i.test(event.key)"
             maxlength="50"
-            formControlName="subject">
+            formControlName="subject" />
+            <div *ngIf="form.controls.subject.hasError('required') && form.controls.subject.touched" class="validation-message">
+              {{ 'contactForm.emptyValidationMessage' | trs }}
+            </div>
         </div>
         <!-- message -->
-        <label class="col-lg-4 col-form-label">{{ 'contactForm.messageLabel' | trs }}</label>
+        <label class="col-lg-4 col-form-label required-label">{{ 'contactForm.messageLabel' | trs }}</label>
         <div class="col-lg-8 mb-2">
-          <textarea
-            class="form-control"
-            rows="4"
-            style="resize: none"
-            maxlength="255"
-            formControlName="message">
-          </textarea>
+          <div id="textarea-container">
+            <textarea
+              class="form-control"
+              rows="7"
+              style="resize: none"
+              maxlength="500"
+              formControlName="message"
+              #messageTextarea>
+            </textarea>
+            <div id="message-length-counter">{{ messageTextarea.value.length }}/500</div>
+          </div>
+          <div *ngIf="form.controls.message.hasError('required') && form.controls.message.touched" class="validation-message">
+            {{ 'contactForm.emptyValidationMessage' | trs }}
+          </div>
         </div>
         <!-- attachment -->
         <label class="col-lg-4 col-form-label">{{ 'contactForm.attachmentLabel' | trs }}</label>
@@ -53,7 +71,10 @@
             type="file"
             accept="application/pdf"
             name="attachment"
-            (change)="onAttachmentChanged($event)">
+            (change)="onAttachmentChanged($event)" />
+          <div *ngIf="attachment && attachment.type !== pdf" class="validation-message">
+            {{ 'contactForm.pdfValidationMessage' | trs }}
+          </div>
         </div>
       </div>
       <div class="form-group row">
@@ -61,7 +82,7 @@
         <div class="col-lg-8 mb-2">
           <button class="w-100 btn btn-primary" type="submit"
             [ngClass]="{
-            'disabledControl': false
+            'disabledControl': !form.valid || (attachment && attachment.type !== pdf)
             }">
           {{ 'contactForm.submitButton' | trs }}
           </button>
