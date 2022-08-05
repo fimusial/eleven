@@ -14,10 +14,10 @@ export class ContactFormComponent implements OnInit {
   public attachment: File | null = null;
 
   public form = new FormGroup({
-    senderName: new FormControl<string>('', { validators: [Validators.required], updateOn: 'blur' }),
-    replyTo: new FormControl<string>('', { validators: [Validators.required, Validators.email], updateOn: 'blur' }),
-    subject: new FormControl<string>('', { validators: [Validators.required], updateOn: 'blur' }),
-    message: new FormControl<string>('', { validators: [Validators.required], updateOn: 'blur' }),
+    senderName: new FormControl<string>('', [Validators.required]),
+    replyTo: new FormControl<string>('', [Validators.required, Validators.email]),
+    subject: new FormControl<string>('', [Validators.required]),
+    message: new FormControl<string>('', [Validators.required]),
   });
 
   constructor(private http: HttpClient) {

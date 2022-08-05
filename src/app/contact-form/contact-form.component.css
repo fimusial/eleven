@@ -18,6 +18,10 @@
   text-align: center;
 }
 
+#form-overlay a {
+  max-width: 500px;
+}
+
 #textarea-container {
   position: relative;
 }
