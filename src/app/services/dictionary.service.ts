@@ -36,6 +36,9 @@ export class DictionaryService {
       blue: 'Niebieskie',
       gray: 'Szare',
     },
+    about: {
+      sectionTitle: 'Jak to działa',
+    },
     catalog: {
       sectionTitle: 'Katalog',
       overlayHeight: 'Wzrost',

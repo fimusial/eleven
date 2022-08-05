@@ -21,6 +21,7 @@ import { FilteringFormComponent } from './catalog/filtering-form/filtering-form.
 import { EnumToSelectPipe } from './services/enum-to-select.pipe';
 import { ElevenFilterPipe } from './services/eleven-filter.pipe';
 import { ContactFormComponent } from './contact-form/contact-form.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
     ProfileComponent,
     FilteringFormComponent,
     ElevenFilterPipe,
-    ContactFormComponent
+    ContactFormComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
