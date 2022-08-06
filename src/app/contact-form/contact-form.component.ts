@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { TranslatePipe } from '../services/translate.pipe';
 
 @Component({
   selector: 'eleven-contact-form',
@@ -9,6 +11,8 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./contact-form.component.css']
 })
 export class ContactFormComponent implements OnInit {
+  
+  private readonly actorNameQueryParamName = 'actorName';
   public readonly pdf = 'application/pdf';
   public done: boolean = false;
   public attachment: File | null = null;
@@ -20,13 +24,20 @@ export class ContactFormComponent implements OnInit {
     message: new FormControl<string>('', [Validators.required]),
   });
 
-  constructor(private http: HttpClient) {
+  constructor(
+    private http: HttpClient,
+    private activatedRoute: ActivatedRoute,
+    private translate: TranslatePipe) {
   }
 
   ngOnInit(): void {
-    this.form.patchValue({
-      subject: 'Actor name from profile',
-    });
+    const queryParams = this.activatedRoute.snapshot.queryParamMap;
+
+    if (queryParams.has(this.actorNameQueryParamName)) {
+      this.form.patchValue({
+        subject: `${this.translate.transform('contactForm.subjectPrefix')} - ${queryParams.get(this.actorNameQueryParamName)}`,
+      });
+    }
   }
 
   public onFormSubmitted(): void {
@@ -44,7 +55,7 @@ export class ContactFormComponent implements OnInit {
       formData.append('attachment', this.attachment as File, this.attachment.name);
     }
 
-    this.http.post(environment.mailerUrl, formData).subscribe(() => {});
+    this.http.post(environment.mailerUrl, formData).subscribe(() => { });
     this.done = true;
   }
 

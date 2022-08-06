@@ -64,9 +64,9 @@ export class FilteringFormComponent implements OnInit {
     location: new FormControl<Location>(this.default.location),
   });
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   public onFormSubmitted(): void {
     this.emitParametersEvent();

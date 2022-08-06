@@ -4,6 +4,8 @@ import { Title } from '@angular/platform-browser';
 import { Actor } from '../models/actor';
 import { DataService } from '../services/data.service';
 import { Image, ModalGalleryService, ModalGalleryRef } from '@ks89/angular-modal-gallery';
+import { Sex } from '../models/sex';
+import { TranslatePipe } from '../services/translate.pipe';
 
 @Component({
   selector: 'eleven-profile',
@@ -14,9 +16,9 @@ export class ProfileComponent implements OnInit {
 
   private readonly profileIdQueryParamName = 'id';
   public readonly dataLocation = '../../assets/data/';
-  public readonly currentYear = new Date().getFullYear();
   public readonly data: Actor[];
 
+  public sexEnum = Sex;
   public actor: Actor = new Actor();
   public galleryImageSources: string[] = [];
 
@@ -25,7 +27,8 @@ export class ProfileComponent implements OnInit {
     private router: Router,
     private titleService: Title,
     private activatedRoute: ActivatedRoute,
-    private modalGalleryService: ModalGalleryService) {
+    private modalGalleryService: ModalGalleryService,
+    public translate: TranslatePipe) {
       this.data = dataService.getData();
     }
 
@@ -62,6 +65,10 @@ export class ProfileComponent implements OnInit {
       images: imagesForModal,
       currentImage: imagesForModal[index]
     }) as ModalGalleryRef;
+  }
+
+  public getEnumArrayTranslatedAndJoined(locations: string[]) {
+    return locations.map(x => this.translate.transform(x)).join(", ");
   }
 
   private navigateHome() {

@@ -6,8 +6,7 @@ import { DictionaryService } from './dictionary.service';
 })
 export class TranslatePipe implements PipeTransform {
 
-  constructor(private dictionaryService: DictionaryService) {
-  }
+  constructor(private dictionaryService: DictionaryService) { }
 
   transform(value: string, ...args: any[]): string {
     let dictionary = this.dictionaryService.getDictionary();

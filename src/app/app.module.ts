@@ -22,6 +22,7 @@ import { EnumToSelectPipe } from './services/enum-to-select.pipe';
 import { ElevenFilterPipe } from './services/eleven-filter.pipe';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { AboutComponent } from './about/about.component';
+import { SafeUrlPipe } from './services/safe-url.pipe';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { AboutComponent } from './about/about.component';
     FilteringFormComponent,
     ElevenFilterPipe,
     ContactFormComponent,
-    AboutComponent
+    AboutComponent,
+    SafeUrlPipe,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,10 @@ import { AboutComponent } from './about/about.component';
     GalleryModule,
     NgxSliderModule
   ],
-  providers: [ElevenFilterPipe],
+  providers: [
+    ElevenFilterPipe,
+    TranslatePipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

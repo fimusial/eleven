@@ -1,3 +1,13 @@
+label {
+  font-weight: bold;
+  font-style: italic;
+}
+
+iframe {
+  aspect-ratio: 16 / 9;
+  margin: 10px;
+}
+
 .gallery-image {
   aspect-ratio: 1;
   height: 380px;
@@ -12,6 +22,17 @@
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+@media (max-width: 992px) {
+  /* lg */
+  label {
+    margin-top: 10px;
+  }
+
+  iframe {
+    width: 250px;
+  }
 }
 
 @media (max-width: 1200px) {

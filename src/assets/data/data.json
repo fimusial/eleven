@@ -16,7 +16,11 @@
     "avoids": "Lorem ipsum dolor sit amet",
     "profilePicturePath": "actor3/stock7.jpg",
     "otherPicturesPaths": ["actor3/stock8.jpg", "actor3/stock9.jpg"],
-    "youtubeVideosUrls": ["https://www.youtube.com/embed/ScMzIvxBSi4"]
+    "youtubeVideosUrls": [
+      "https://www.youtube.com/embed/ScMzIvxBSi4",
+      "https://www.youtube.com/embed/u31qwQUeGuM",
+      "https://www.youtube.com/embed/NpEaa2P7qZI"
+    ]
   },
   {
     "id": "rmc1",
@@ -35,7 +39,10 @@
     "avoids": "Lorem ipsum dolor sit amet",
     "profilePicturePath": "actor1/stock1.jpg",
     "otherPicturesPaths": ["actor1/stock2.jpg", "actor1/stock3.jpg"],
-    "youtubeVideosUrls": ["https://www.youtube.com/embed/ScMzIvxBSi4"]
+    "youtubeVideosUrls": [
+      "https://www.youtube.com/embed/ScMzIvxBSi4",
+      "https://www.youtube.com/embed/u31qwQUeGuM"
+    ]
   },
   {
     "id": "jdope2",
@@ -73,7 +80,7 @@
     "avoids": "Lorem ipsum dolor sit amet",
     "profilePicturePath": "actor1/stock2.jpg",
     "otherPicturesPaths": ["actor1/stock1.jpg", "actor1/stock3.jpg"],
-    "youtubeVideosUrls": ["https://www.youtube.com/embed/ScMzIvxBSi4"]
+    "youtubeVideosUrls": []
   },
   {
     "id": "gcrawford1",
