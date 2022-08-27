@@ -30,8 +30,6 @@
 
 #info-text {
   max-width: 500px;
-  text-align: justify;
-  text-justify: inter-word;
 }
 
 @keyframes pulse {

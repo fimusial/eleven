@@ -13,7 +13,6 @@ import { TranslatePipe } from '../services/translate.pipe';
 export class ContactFormComponent implements OnInit {
   
   private readonly actorNameQueryParamName = 'actorName';
-  public readonly pdf = 'application/pdf';
   public done: boolean = false;
   public attachment: File | null = null;
 
@@ -41,10 +40,6 @@ export class ContactFormComponent implements OnInit {
   }
 
   public onFormSubmitted(): void {
-    if (!this.form.valid || (this.attachment && this.attachment?.type !== this.pdf)) {
-      return;
-    }
-    
     const formData = new FormData();
     formData.append('sender-name', this.form.value.senderName as string);
     formData.append('reply-to', this.form.value.replyTo as string);

@@ -75,6 +75,8 @@ export class DictionaryService {
       submitButton: 'Szukaj',
     },
     profile: {
+      infoSectionTitle: 'Informacje',
+      videoSectionTitle: 'Wideo',
       goToContact: 'Zapytaj o mnie',
       sexLabel: 'Płeć',
       ageLabel: 'Wiek',
@@ -95,7 +97,7 @@ export class DictionaryService {
       replyToLabel: 'Adres email',
       subjectLabel: 'Temat',
       messageLabel: 'Wiadomość',
-      attachmentLabel: 'Załącznik (tylko PDF)',
+      attachmentLabel: 'Załącznik',
       submitButton: 'Wyślij',
       emptyValidationMessage: 'Proszę wypełnić pole.',
       emailValidationMessage: 'Proszę podać poprawny adres email.',
@@ -112,10 +114,11 @@ export class DictionaryService {
     mainPage: {
       h1: 'Agencja Eleven',
       h2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      sectionTitle: 'O nas...',
       button: 'SZUKAJ',
     },
     footer: {
-      content: '2022 - made by reyss - #71',
+      content: '2022 - 11agencja@gmail.com',
     }
   }
 

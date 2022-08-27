@@ -24,7 +24,11 @@ iframe {
   flex-wrap: wrap;
 }
 
-@media (max-width: 992px) {
+.info-row label {
+  color: var(--eleven-text-light-secondary);
+}
+
+@media (max-width: 991px) {
   /* lg */
   label {
     margin-top: 10px;
@@ -32,6 +36,10 @@ iframe {
 
   iframe {
     width: 250px;
+  }
+
+  .info-row {
+    margin-bottom: 10px;
   }
 }
 

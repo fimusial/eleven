@@ -1,6 +1,5 @@
 p {
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: center;
 }
 
 img {
@@ -8,7 +7,10 @@ img {
   object-fit: cover;
   height: 400px;
   margin-bottom: 10px;
-  /* margin-bottom: 10px; */
+}
+
+#mosaic {
+  padding: 0 30px 0 30px;
 }
 
 @media (min-width: 992px) {
@@ -20,5 +22,6 @@ img {
 
   #mosaic {
     width: 800px;
+    padding: 0;
   }
 }

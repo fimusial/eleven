@@ -21,48 +21,66 @@
   </div>
 </section>
 <section class="container">
-  <div class="row mb-5">
+  <div class="section-title">
+    <h2> {{ 'profile.infoSectionTitle' | trs }} </h2>
+  </div>
+  <div class="info-row row">
     <h5 class="col-lg-3"><label>{{ 'profile.ageLabel' | trs }}</label></h5>
     <h5 class="col-lg-9">{{ actor.age }}</h5>
-
+  </div>
+  <div class="info-row row">
     <h5 class="col-lg-3"><label>{{'profile.sexLabel' | trs }}</label></h5>
     <h5 class="col-lg-9">{{ actor.sex | trs }}
       <ng-container *ngIf="actor.sex === sexEnum.Female"><i class="bi bi-gender-female"></i></ng-container>
       <ng-container *ngIf="actor.sex === sexEnum.Male"><i class="bi bi-gender-male"></i></ng-container>
     </h5>
-
+  </div>
+  <div class="info-row row">
     <h5 class="col-lg-3"><label>{{ 'profile.hairColorLabel' | trs }}</label></h5>
     <h5 class="col-lg-9">{{ actor.hairColor | trs }}</h5>
-
+  </div>
+  <div class="info-row row">
     <h5 class="col-lg-3"><label>{{ 'profile.eyeColorLabel' | trs }}</label></h5>
     <h5 class="col-lg-9">{{ actor.eyeColor | trs }}</h5>
-
+  </div>
+  <div class="info-row row">
     <h5 class="col-lg-3"><label>{{ 'profile.ethnicityLabel' | trs }}</label></h5>
     <h5 class="col-lg-9">{{ actor.ethnicity | trs }}</h5>
-
+  </div>
+  <div class="info-row row">
     <h5 class="col-lg-3"><label>{{ 'profile.locationsLabel' | trs }}</label></h5>
     <h5 class="col-lg-9">
       {{ getEnumArrayTranslatedAndJoined(actor.locations) }}
     </h5>
-
+  </div>
+  <div class="info-row row">
     <h5 class="col-lg-3"><label>{{ 'profile.languagesLabel' | trs }}</label></h5>
     <h5 class="col-lg-9">
       {{ getEnumArrayTranslatedAndJoined(actor.languages) }}
     </h5>
-
+  </div>
+  <div class="info-row row">
     <h5 class="col-lg-3"><label>{{ 'profile.experienceLabel' | trs }}</label></h5>
     <h5 class="col-lg-9">{{ actor.experience | trs }}</h5>
-
+  </div>
+  <div class="info-row row">
     <h5 class="col-lg-3"><label>{{ 'profile.performancesLabel' | trs }}</label></h5>
     <h5 class="col-lg-9">
       {{ getEnumArrayTranslatedAndJoined(actor.performances) }}
     </h5>
-
+  </div>
+  <div class="info-row row">
     <h5 class="col-lg-3"><label>{{ 'profile.skillsDescriptionLabel' | trs }}</label></h5>
     <h5 class="col-lg-9">{{ actor.skillsDescription | trs }}</h5>
-
+  </div>
+  <div class="info-row row">
     <h5 class="col-lg-3"><label>{{ 'profile.avoidsLabel' | trs }}</label></h5>
     <h5 class="col-lg-9">{{ actor.avoids | trs }}</h5>
+  </div>
+</section>
+<section>
+  <div class="section-title">
+    <h2> {{ 'profile.videoSectionTitle' | trs }} </h2>
   </div>
   <div *ngIf="actor.youtubeVideosUrls.length > 0" class="d-flex justify-content-center flex-wrap">
     <div *ngFor="let ytUrl of actor.youtubeVideosUrls">
