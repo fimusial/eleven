@@ -6,7 +6,7 @@ import { EyeColor } from 'src/app/models/eye-color';
 import { HairColor } from 'src/app/models/hair-color';
 import { Location } from 'src/app/models/location';
 import { Sex } from 'src/app/models/sex';
-import { FilteringParameters } from './filteringParameters';
+import { FilteringParameters } from './filtering-parameters';
 
 @Component({
   selector: 'eleven-filtering-form',

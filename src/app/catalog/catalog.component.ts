@@ -1,7 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Actor } from '../models/actor';
 import { DataService } from '../services/data.service';
-import { FilteringParameters } from './filtering-form/filteringParameters';
+import { FilteringParameters } from './filtering-form/filtering-parameters';
 import { ElevenFilterPipe } from '../services/eleven-filter.pipe';
 
 @Component({

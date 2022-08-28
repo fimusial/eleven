@@ -1,6 +1,5 @@
 #outer {
   border-radius: 10px;
-  /* border: 5px solid var(--eleven-border-color); */
   background-color: var(--eleven-background-dark);
   padding: 10px;
 }

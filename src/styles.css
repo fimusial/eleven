@@ -80,7 +80,7 @@ section {
   margin-bottom: 0;
 }
 
-.disabledControl {
+.disabled-control {
   filter: grayscale(1);
   opacity: 0.25;
   pointer-events: none;

@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { FilteringParameters } from '../catalog/filtering-form/filteringParameters';
+import { FilteringParameters } from '../catalog/filtering-form/filtering-parameters';
 import { Actor } from '../models/actor';
 
 @Pipe({
