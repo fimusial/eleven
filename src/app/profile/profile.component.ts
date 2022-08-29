@@ -41,7 +41,7 @@ export class ProfileComponent implements OnInit {
     }
 
     const actorIdFromQueryParams = queryParams.get(this.profileIdQueryParamName);
-    const foundActor =this.data.find(actor => actor.id == actorIdFromQueryParams);
+    const foundActor = this.data.find(actor => actor.id === actorIdFromQueryParams);
 
     if (!foundActor) {
       this.navigateHome();

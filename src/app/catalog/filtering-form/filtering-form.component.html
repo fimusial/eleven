@@ -7,10 +7,12 @@
     <i *ngIf="!collapsed" class="mb-4 collapse-arrow bi bi-chevron-compact-up"></i>
   </div>
   <form *ngIf="!collapsed" [formGroup]="form" (ngSubmit)="onFormSubmitted()">
-    <div class="form-group row">
+    <div class="form-group row mb-2">
       <div class="col-lg-4"></div>
-      <div class="col-lg-8 mb-2">
-        <button class="w-100 btn btn-primary" type="button"
+      <div class="col-lg-8">
+        <button
+          class="w-100 btn btn-primary"
+          type="button"
           (click)="onFormReset()"
           [ngClass]="{ 'disabledControl': form.pristine }">
           {{ 'filteringForm.resetButton' | trs }}
@@ -19,29 +21,17 @@
     </div>
     <div class="form-group row">
       <!-- sex -->
-      <label class="col-lg-4 col-form-label">
-        <input class="form-check-input" type="checkbox" formControlName="sexEnabled">
-        {{ 'filteringForm.sexLabel' | trs }}
-      </label>
-      <div class="col-lg-8 btn-group mb-2" [ngClass]="{ 'disabledControl': !form.value.sexEnabled }" role="group">
-        <input id="female-option" [value]="sexEnum.Female" class="btn-check" type="radio" formControlName="sex">
-        <label class="w-50 btn btn-outline-primary" for="female-option">
-          {{ sexEnum.Female | trs }}
-          <i class="bi bi-gender-female"></i>
-        </label>
-        <input id="male-option" [value]="sexEnum.Male" class="btn-check" type="radio" formControlName="sex">
-        <label class="w-50 btn btn-outline-primary" for="male-option">
-          {{ sexEnum.Male | trs }}
-          <i class="bi bi-gender-male"></i>
-        </label>
+      <label class="col-lg-4 col-form-label">{{ 'filteringForm.sexLabel' | trs }}</label>
+      <div class="col-lg-8 mb-2">
+        <select id="sex-control" class="form-select" formControlName="sex">
+          <option [value]="'anySelection'">{{ 'anySelection' | trs }}</option>
+          <option *ngFor="let enumValue of sexEnum | e2s" [value]="enumValue">{{ enumValue | trs }}</option>
+        </select>
       </div>
       <!-- age -->
       <div class="row">
-        <label class="col-lg-4 col-form-label">
-          <input class="form-check-input" type="checkbox" formControlName="ageEnabled">
-          {{ 'filteringForm.ageLabel' | trs }}
-        </label>
-        <div id="slider-wrapper" class="col-lg-8" [ngClass]="{ 'disabledControl': !form.value.ageEnabled }">
+        <label class="col-lg-4 col-form-label">{{ 'filteringForm.ageLabel' | trs }}</label>
+        <div id="slider-wrapper" class="col-lg-8">
           <div class="eleven-slider">
             <ngx-slider
               [(value)]="ageSliderMinValue"
@@ -53,11 +43,8 @@
       </div>
       <!-- height -->
       <div class="row">
-        <label class="col-lg-4 col-form-label">
-          <input class="form-check-input" type="checkbox" formControlName="heightEnabled">
-          {{ 'filteringForm.heightLabel' | trs }}
-        </label>
-        <div id="slider-wrapper" class="col-lg-8" [ngClass]="{ 'disabledControl': !form.value.heightEnabled }">
+        <label class="col-lg-4 col-form-label">{{ 'filteringForm.heightLabel' | trs }}</label>
+        <div id="slider-wrapper" class="col-lg-8">
           <div class="eleven-slider">
             <ngx-slider
               [(value)]="heightSliderMinValue"
@@ -70,59 +57,42 @@
     </div>
     <div class="form-group row">
       <!-- hair color -->
-      <label class="col-lg-4 col-form-label">
-        <input class="form-check-input" type="checkbox" formControlName="hairColorEnabled">
-        {{ 'filteringForm.hairColorLabel' | trs }}
-      </label>
-      <div class="col-lg-8 mb-2" [ngClass]="{ 'disabledControl': !form.value.hairColorEnabled }">
+      <label class="col-lg-4 col-form-label">{{ 'filteringForm.hairColorLabel' | trs }}</label>
+      <div class="col-lg-8 mb-2">
         <select id="hair-color-control" class="form-select" formControlName="hairColor">
-          <option *ngFor="let value of hairColorEnum | e2s" [value]="value">{{ value | trs }}</option>
+          <option [value]="'anySelection'">{{ 'anySelection' | trs }}</option>
+          <option *ngFor="let enumValue of hairColorEnum | e2s" [value]="enumValue">{{ enumValue | trs }}</option>
         </select>
       </div>
       <!-- eye color -->
-      <label class="col-lg-4 col-form-label">
-        <input class="form-check-input" type="checkbox" formControlName="eyeColorEnabled">
-        {{ 'filteringForm.eyeColorLabel' | trs }}
-      </label>
-      <div class="col-lg-8 mb-2" [ngClass]="{ 'disabledControl': !form.value.eyeColorEnabled }">
+      <label class="col-lg-4 col-form-label">{{ 'filteringForm.eyeColorLabel' | trs }}</label>
+      <div class="col-lg-8 mb-2">
         <select id="eye-color-control" class="form-select" formControlName="eyeColor">
-          <option *ngFor="let value of eyeColorEnum | e2s" [value]="value">{{ value | trs }}</option>
+          <option [value]="'anySelection'">{{ 'anySelection' | trs }}</option>
+          <option *ngFor="let enumValue of eyeColorEnum | e2s" [value]="enumValue">{{ enumValue | trs }}</option>
         </select>
       </div>
       <!-- ethnicity -->
-      <label class="col-lg-4 col-form-label">
-        <input class="form-check-input" type="checkbox" formControlName="ethnicityEnabled">
-        {{ 'filteringForm.ethnicityLabel' | trs }}
-      </label>
-      <div class="col-lg-8 mb-2" [ngClass]="{ 'disabledControl': !form.value.ethnicityEnabled }">
+      <label class="col-lg-4 col-form-label">{{ 'filteringForm.ethnicityLabel' | trs }}</label>
+      <div class="col-lg-8 mb-2">
         <select id="ethnicity-control" class="form-select" formControlName="ethnicity">
-          <option *ngFor="let value of ethnicityEnum | e2s" [value]="value">{{ value | trs }}</option>
+          <option [value]="'anySelection'">{{ 'anySelection' | trs }}</option>
+          <option *ngFor="let enumValue of ethnicityEnum | e2s" [value]="enumValue">{{ enumValue | trs }}</option>
         </select>
       </div>
       <!-- location -->
-      <label class="col-lg-4 col-form-label">
-        <input class="form-check-input" type="checkbox" formControlName="locationEnabled">
-        {{ 'filteringForm.locationLabel' | trs }}
-      </label>
-      <div class="col-lg-8 mb-2" [ngClass]="{ 'disabledControl': !form.value.locationEnabled }">
+      <label class="col-lg-4 col-form-label">{{ 'filteringForm.locationLabel' | trs }}</label>
+      <div class="col-lg-8 mb-2">
         <select id="location-control" class="form-select" formControlName="location">
-          <option *ngFor="let value of locationEnum | e2s" [value]="value">{{ value | trs }}</option>
+          <option [value]="'anySelection'">{{ 'anySelection' | trs }}</option>
+          <option *ngFor="let enumValue of locationEnum | e2s" [value]="enumValue">{{ enumValue | trs }}</option>
         </select>
       </div>
     </div>
     <div class="form-group row">
       <div class="col-lg-4"></div>
       <div class="col-lg-8 mb-2">
-        <button class="w-100 btn btn-primary" type="submit"
-          [ngClass]="{
-          'disabledControl': !form.value.sexEnabled
-            && !form.value.ageEnabled
-            && !form.value.heightEnabled
-            && !form.value.hairColorEnabled
-            && !form.value.eyeColorEnabled
-            && !form.value.ethnicityEnabled
-            && !form.value.locationEnabled
-          }">
+        <button class="w-100 btn btn-primary" type="submit">
         {{ 'filteringForm.submitButton' | trs }}
         </button>
       </div>

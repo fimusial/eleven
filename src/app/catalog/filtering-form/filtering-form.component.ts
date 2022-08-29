@@ -31,6 +31,7 @@ export class FilteringFormComponent implements OnInit {
     step: 1,
     minRange: 1,
     pushRange: true,
+    onlyBindHandles: true,
   };
 
   public readonly heightSliderOptions: Options = {
@@ -40,6 +41,7 @@ export class FilteringFormComponent implements OnInit {
     step: 1,
     minRange: 1,
     pushRange: true,
+    onlyBindHandles: true,
   };
 
   public default = new FilteringParameters();
@@ -50,18 +52,11 @@ export class FilteringFormComponent implements OnInit {
   public heightSliderMaxValue: number = this.default.maxHeight;
 
   public form = new FormGroup({
-    sexEnabled: new FormControl<boolean>(this.default.sexEnabled),
-    sex: new FormControl<Sex>(this.default.sex),
-    ageEnabled: new FormControl<boolean>(this.default.ageEnabled),
-    heightEnabled: new FormControl<boolean>(this.default.heightEnabled),
-    hairColorEnabled: new FormControl<boolean>(this.default.hairColorEnabled),
-    hairColor: new FormControl<HairColor>(this.default.hairColor),
-    eyeColorEnabled: new FormControl<boolean>(this.default.eyeColorEnabled),
-    eyeColor: new FormControl<EyeColor>(this.default.eyeColor),
-    ethnicityEnabled: new FormControl<boolean>(this.default.ethnicityEnabled),
-    ethnicity: new FormControl<Ethnicity>(this.default.ethnicity),
-    locationEnabled: new FormControl<boolean>(this.default.locationEnabled),
-    location: new FormControl<Location>(this.default.location),
+    sex: new FormControl<string | null>(this.toFormSelectValue(this.default.sex)),
+    hairColor: new FormControl<string | null>(this.toFormSelectValue(this.default.hairColor)),
+    eyeColor: new FormControl<string | null>(this.toFormSelectValue(this.default.eyeColor)),
+    ethnicity: new FormControl<string | null>(this.toFormSelectValue(this.default.ethnicity)),
+    location: new FormControl<string | null>(this.toFormSelectValue(this.default.location)),
   });
 
   constructor() { }
@@ -79,32 +74,38 @@ export class FilteringFormComponent implements OnInit {
 
   private emitParametersEvent(): void {
     this.parameters.emit({
-      sexEnabled: this.form.value.sexEnabled,
-      sex: this.form.value.sex,
-      ageEnabled: this.form.value.ageEnabled,
+      sex: this.fromFormSelectValue(this.form.value.sex),
       minAge: this.ageSliderMinValue,
       maxAge: this.ageSliderMaxValue,
-      heightEnabled: this.form.value.heightEnabled,
       minHeight: this.heightSliderMinValue,
       maxHeight: this.heightSliderMaxValue,
-      hairColorEnabled: this.form.value.hairColorEnabled,
-      hairColor: this.form.value.hairColor,
-      eyeColorEnabled: this.form.value.eyeColorEnabled,
-      eyeColor: this.form.value.eyeColor,
-      ethnicityEnabled: this.form.value.ethnicityEnabled,
-      ethnicity:  this.form.value.ethnicity,
-      locationEnabled: this.form.value.locationEnabled,
-      location: this.form.value.location,
+      hairColor: this.fromFormSelectValue(this.form.value.hairColor),
+      eyeColor: this.fromFormSelectValue(this.form.value.eyeColor),
+      ethnicity:  this.fromFormSelectValue(this.form.value.ethnicity),
+      location: this.fromFormSelectValue(this.form.value.location),
     } as FilteringParameters);
   }
 
   private resetFormState(): void {
-    this.form.reset(this.default);
+    this.form.reset({
+      sex: this.toFormSelectValue(this.default.sex),
+      hairColor: this.toFormSelectValue(this.default.hairColor),
+      eyeColor: this.toFormSelectValue(this.default.eyeColor),
+      ethnicity: this.toFormSelectValue(this.default.ethnicity),
+      location: this.toFormSelectValue(this.default.location),
+    });
     
     this.ageSliderMinValue = this.default.minAge;
     this.ageSliderMaxValue = this.default.maxAge;
-
     this.heightSliderMinValue = this.default.minHeight;
     this.heightSliderMaxValue = this.default.maxHeight;
+  }
+
+  private fromFormSelectValue(formValue: string | null | undefined) {
+    return !formValue || formValue === 'anySelection' ? null : formValue;
+  }
+
+  private toFormSelectValue(value: string | null | undefined) {
+    return !value ? 'anySelection' : value;
   }
 }

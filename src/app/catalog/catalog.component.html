@@ -32,6 +32,7 @@
       <ngb-pagination
         class="d-flex justify-content-center catalog-pagination-controls"
         [(page)]="currentPage"
+        (pageChange)="scrollToTop()"
         [pageSize]="pageSize"
         [collectionSize]="filteredData.length"
         [maxSize]="paginationBarSize"

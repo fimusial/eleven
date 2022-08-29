@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class DictionaryService {
   private readonly dictionaryPL: any = {
     enums: {
+      anySelection: 'dowolnie',
       dark: 'ciemne',
       light: 'jasne',
       red: 'rude',

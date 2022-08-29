@@ -44,6 +44,14 @@ export class CatalogComponent implements OnInit {
     this.updateFilteredData();
   }
 
+  public scrollToTop(): void {
+    window.scroll({ 
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }
+
   private updateFilteredData(): void {
     this.filteredData = this.filter.transform(this.data, this.filteringParameters);
   }
