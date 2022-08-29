@@ -71,6 +71,10 @@ export class ProfileComponent implements OnInit {
     return locations.map(x => this.translate.transform(x)).join(", ");
   }
 
+  public scrollToSection(htmlElement: HTMLElement): void {
+    htmlElement.scrollIntoView();
+  }
+
   private navigateHome() {
     this.router.navigate([ '/' ]);
   }

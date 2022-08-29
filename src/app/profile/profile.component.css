@@ -8,6 +8,11 @@ iframe {
   margin: 10px;
 }
 
+.section-navigation-link {
+  width: 40%;
+  margin: 0 5px 0 5px;
+}
+
 .gallery-image {
   aspect-ratio: 1;
   height: 380px;
@@ -40,6 +45,13 @@ iframe {
 
   .info-row {
     margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 991px) {
+  /* lg */
+  #section-navigation {
+    display: none !important;
   }
 }
 
