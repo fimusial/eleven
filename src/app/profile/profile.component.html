@@ -41,6 +41,10 @@
     <h5 class="col-lg-9">{{ actor.age }}</h5>
   </div>
   <div class="info-row row">
+    <h5 class="col-lg-3"><label>{{ 'profile.heightLabel' | trs }}</label></h5>
+    <h5 class="col-lg-9">{{ actor.height }}cm</h5>
+  </div>
+  <div class="info-row row">
     <h5 class="col-lg-3"><label>{{'profile.sexLabel' | trs }}</label></h5>
     <h5 class="col-lg-9">{{ actor.sex | trs }}
       <ng-container *ngIf="actor.sex === sexEnum.Female"><i class="bi bi-gender-female"></i></ng-container>
