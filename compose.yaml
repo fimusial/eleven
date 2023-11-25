@@ -1,0 +1,10 @@
+services:
+  app:
+    build:
+      dockerfile: ./Dockerfile
+    ports:
+      - "4200:4200"
+    volumes:
+      - app:/app
+volumes:
+  app:
